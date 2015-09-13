@@ -1,0 +1,44 @@
+---
+en:
+  navigation:
+    docs: Docs
+    github: Github
+    logo: Confidant
+    search_placeholder: Search the docs
+    basics:
+      title: Basics
+      install: Install
+    advanced:
+      title: Advanced
+      asset_pipeline: Asset Pipeline
+      configuration: Configuring Your Site
+      project_templates: Project Templates
+
+  introduction:
+    first:
+      header: First Header
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    second:
+      header: Second Header
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    third:
+      header: Third Header
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+
+# landing cta
+  cta:
+    title: Get started with Confidant today
+    docs: View Docs
+    github: Github
+
+# index
+  index:
+    headline: Your secret keeper for service credentials
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, from the developers at Lyft
+
+# footer
+  built:
+    twitter: Twitter
+    github: Github
+    download: Download the Lyft app
+
