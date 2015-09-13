@@ -4,9 +4,9 @@ title: Installation
 
 # Installation
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum, mi vitae sollicitudin convallis, nisi purus interdum est, quis tincidunt sapien nunc nec lacus. Donec convallis, dolor vitae fermentum cursus, odio enim ultricies diam, eget volutpat erat augue a elit. 
-
-Phasellus euismod eros in rhoncus dignissim. Morbi neque nunc, elementum vel metus vitae, vulputate hendrerit nibh. Maecenas bibendum dui ut mi congue, at dignissim lectus tempus. Quisque ac metus egestas, iaculis magna ut, fringilla tortor. Donec dignissim augue non dapibus fermentum. Praesent ac porta nunc, iaculis dapibus orci. Pellentesque tempus elit vehicula, elementum odio non, elementum augue. 
+As mentioned in the Quickstart guide, Confidant is available as a docker image,
+but if you want to install Confidant on an AWS instance instead, this guide
+will get you started.
 
 Duis quis quam facilisis, porta augue in, interdum elit. Nunc sit amet lacus eu ligula euismod pellentesque sit amet sed erat. Vivamus ornare rutrum diam eu elementum. Nam in odio purus. Also, [this is a link](http://lyft.com).
 
@@ -14,7 +14,7 @@ Duis quis quam facilisis, porta augue in, interdum elit. Nunc sit amet lacus eu 
 ```bash
 $ gem install confidant
 ```
-## header 2
+## 
 
 Here is an example of an html codeblock:
 

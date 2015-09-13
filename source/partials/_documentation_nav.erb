@@ -5,6 +5,12 @@
     <ul>
       <li class="doc-item">
         <%= active_link_to  t("navigation.basics.install"), "#{locale_prefix}/basics/install/"%> </li>
+      <li class="doc-item">
+        <%= active_link_to t("navigation.basics.configuration"), "#{locale_prefix}/basics/configuration/" %>
+        </li>
+      <li class="doc-item">
+        <%= active_link_to t("navigation.basics.using_confidant"), "#{locale_prefix}/basics/using_confidant/" %>
+        </li>
     </ul>
   </div>
 
@@ -12,10 +18,13 @@
     <h3 class="docs-section-heading"><%= t("navigation.advanced.title") %></h3>
     <ul>
       <li class="doc-item">
-        <%= active_link_to t("navigation.advanced.configuration"), "#{locale_prefix}/advanced/configuration/" %>
+        <%= active_link_to t("navigation.advanced.threat_model"), "#{locale_prefix}/advanced/threat_model/" %>
         </li>
       <li class="doc-item">
-        <%= active_link_to t("navigation.advanced.project_templates"), "#{locale_prefix}/advanced/project_templates/" %>
+        <%= active_link_to t("navigation.advanced.service_to_service_auth"), "#{locale_prefix}/advanced/service_to_service_auth/" %>
+        </li>
+      <li class="doc-item">
+        <%= active_link_to t("navigation.advanced.contributing"), "#{locale_prefix}/advanced/contributing/" %>
         </li>
     </ul>
   </div>
