@@ -1,0 +1,53 @@
+.global-nav {
+  height: $global-nav-height;
+  background-color: $base-hero-color;
+  padding: 1em 0;
+  position: relative;
+}
+
+.global-nav-logo {
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+
+  @include media($medium-screen-up) {
+    display: inline-block;
+  }
+}
+
+.logo-text {
+  float: left;
+  font-size: $h4-font-size;
+  font-weight: $font-weight-bold;
+}
+
+.global-nav-list {
+  float: right;
+  line-height: 2em;
+}
+
+.global-nav-item {
+  display: inline-block;
+  margin-right: 0.5em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    color: $global-nav-link-color;
+
+    &:hover {
+      color: $global-nav-link-hover-color;
+    }
+  }
+
+  @include media($medium-screen-up) {
+    margin-right: 2em;
+  }
+}
+
+a.cta-link-nav-filled {
+  @include button-filled($base-accent-color);
+  padding: 0px 15px;
+}
+
