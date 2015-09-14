@@ -20,9 +20,9 @@ en:
   introduction:
     first:
       header: KMS Authentication
-      description: Confidant solves the authentication chicken and egg problem by using AWS KMS and IAM to allow IAM roles to generate secure authentication tokens that can be verified by Confidant. Confidant also manages KMS grants for your IAM roles, which also allows the IAM roles to generate tokens that can be used for service-to-service authentication, or to pass encrypted messages between services.
+      description: Confidant solves the authentication chicken and egg problem by using AWS KMS and IAM to allow IAM roles to generate secure authentication tokens that can be verified by Confidant. Confidant also manages KMS grants for your IAM roles, which allows the IAM roles to generate tokens that can be used for service-to-service authentication, or to pass encrypted messages between services.
     second:
-      header: At-rest encryption of versioned secrets, using KMS and DynamoDB
+      header: At-rest encryption of versioned secrets
       description: Confidant stores secrets in an append-only way in DynamoDB, generating a unique KMS data key for every revision of every secret, using Fernet symmetric authenticated cryptography.
     third:
       header: A user-friendly web interface for managing secrets
