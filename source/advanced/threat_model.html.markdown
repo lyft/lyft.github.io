@@ -63,8 +63,6 @@ could apply.
 1. If a service is storing the secrets on the filesystem unencrypted, an
    attacker would be able to steal the service secrets.
 
-## Web server threat model
-
 ## Storage threat model
 
 ### Assumptions
