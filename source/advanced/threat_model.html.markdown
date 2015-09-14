@@ -1,42 +1,81 @@
 ---
-title: Installation
+title: Threat model
 ---
 
-# Installation
+# Threat model
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum, mi vitae sollicitudin convallis, nisi purus interdum est, quis tincidunt sapien nunc nec lacus. Donec convallis, dolor vitae fermentum cursus, odio enim ultricies diam, eget volutpat erat augue a elit. 
+The threat model is written in terms of what an attacker can accomplish from
+various perspectives. It's meant to be exhaustive, and anything missing should
+be reported as an issue in the github project.
 
-Phasellus euismod eros in rhoncus dignissim. Morbi neque nunc, elementum vel metus vitae, vulputate hendrerit nibh. Maecenas bibendum dui ut mi congue, at dignissim lectus tempus. Quisque ac metus egestas, iaculis magna ut, fringilla tortor. Donec dignissim augue non dapibus fermentum. Praesent ac porta nunc, iaculis dapibus orci. Pellentesque tempus elit vehicula, elementum odio non, elementum augue. 
+## Web server/client threat model
 
-Duis quis quam facilisis, porta augue in, interdum elit. Nunc sit amet lacus eu ligula euismod pellentesque sit amet sed erat. Vivamus ornare rutrum diam eu elementum. Nam in odio purus. Also, [this is a link](http://lyft.com).
+### Assumptions
 
+1. Valid authenticated and authorized users act in good faith.
+1. Users' computers are not infected by malware.
+1. TLS with a valid trust is being used for http connections.
 
-```bash
-$ gem install confidant
-```
-## header 2
+### What an authenticated user can achieve
 
-Here is an example of an html codeblock:
+1. A user can view all credentials.
+1. A user can view all credential to service mappings.
+1. A user can create new revisions of a credential.
+1. A user can create new revisions of a service mapping.
 
-``` html
-<html>
-<head>
-  <title>My Site</title>
-</head>
-<body>
-  <%= yield %>
-</body>
-</html>
-```
+### What compromize of an authenticated user's computer can achieve
 
-Here is an example of a ruby codeblock:
+1. Compromise of a user's computer can give the attacker access to all actions
+   achievable by the user.
 
-``` ruby
-page "/admin/*", :layout => "admin"
-```
+### What an unauthenticated local network attacker who can observe network traffic can achieve
 
-Here's a list:
+1. The passive attacker can learn who is using Confidant.
+1. The passive attacker can block access to Confidant.
+1. The passive attacker can observe the approximate size of credentials.
 
-* Lorem ipsum `example`
-* Lorem ipsum `example`
-* Lorem ipsum `example`
+### What an unauthenticated attacker from the Internet can achieve
+
+1. An attacker from the internet can DoS the Confidant server.
+
+## Service client threat model
+
+### Assumptions
+
+1. IAM policy is properly configured for the KMS AUTH\_KEY, if using KMS auth.
+1. IAM policy is properly configured for the S3 locations, if S3 auth is used.
+1. TLS with a valid trust is being used for http connections.
+1. IAM policy is properly configured for DynamoDB
+
+### What the service can achieve
+
+1. A service can retrieve credentials mapped to it.
+
+### What an attacker can achieve with a filesystem read vulnerability
+
+Client management and storage of secrets is an implementation detail outside of
+the scope of the Confidant service itself, but the following threat models
+could apply.
+
+1. If a service is storing the authentication token on the filesystem, an
+   attacker would be able to steal the token, which would give them the access
+   level of the service for the lifetime of the token.
+1. If a service is storing the secrets on the filesystem unencrypted, an
+   attacker would be able to steal the service secrets.
+
+## Web server threat model
+
+## Storage threat model
+
+### Assumptions
+
+1. cryptography.io's Fernet implementation is secure.
+1. KMS's AES implementation is secure.
+1. Attackers don't have access to the KMS master key.
+
+### What an attacker with DynamoDB access can achieve
+
+1. An attacker with full DynamoDB access can delete or corrupt all service and
+   secrets.
+1. An attacker with read DynamoDB access can read service mapping data and
+   the metadata (friendly name, modified date, modified by, etc.) of secrets.
