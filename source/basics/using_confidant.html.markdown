@@ -54,13 +54,24 @@ created.
 
 ### Finding credentials and services in the sidebar
 
-<img src='/images/interface-filter.png' width="250" style="float: right; margin: 10px"></img>
+<img src='/images/interface-filter.png' width="225" style="float: right; margin: 10px"></img>
 
 Once you have enough credentials and services, it can be difficult to find them
 in the sidebar. To make this easier, the sidebar has a filter at the top
 that'll let you selectively display credentials and services.
-
-<img src='/images/interface-filter-with-regex.png' width="250" style="float: left; margin: 10px"></img>
+<img src='/images/interface-filter-with-regex.png' width="225" style="float: left; margin: 10px"></img>
 
 By default this filter will match any word in the user-defined name of
 credentials and services, but it's also possible to use a regex filter instead.
+
+<br>
+## Using the history view
+
+<img src='/images/interface-history.png' width="400" style="float: right; margin: 10px"></img>
+
+The history view can be used to explore changes in credentials or services. The
+left panel of the history view shows a list of changes, sorted by date.
+Clicking on any revision in the left panel will bring up a diff view in the
+right panel. In the diff view, you can navigate to older or newer revisions of
+the selected resource, or you can revert to a revision of the selected
+resource.
