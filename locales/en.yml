@@ -7,23 +7,26 @@ en:
     search_placeholder: Search the docs
     basics:
       title: Basics
+      quickstart: Quickstart
       install: Install
+      configuration: Configure
+      using_confidant: Managing secrets and mappings
     advanced:
       title: Advanced
-      asset_pipeline: Asset Pipeline
-      configuration: Configuring Your Site
-      project_templates: Project Templates
+      threat_model: Threat Model
+      service_to_service_auth: Service-to-service authentication/encryption
+      contributing: Contributing
 
   introduction:
     first:
-      header: First Header
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      header: KMS Authentication
+      description: Confidant solves the authentication chicken and egg problem by using AWS KMS and IAM to allow IAM roles to generate secure authentication tokens that can be verified by Confidant. Confidant also manages KMS grants for your IAM roles, which allows the IAM roles to generate tokens that can be used for service-to-service authentication, or to pass encrypted messages between services.
     second:
-      header: Second Header
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      header: At-rest encryption of versioned secrets
+      description: Confidant stores secrets in an append-only way in DynamoDB, generating a unique KMS data key for every revision of every secret, using Fernet symmetric authenticated cryptography.
     third:
-      header: Third Header
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      header: A user-friendly web interface for managing secrets
+      description: Confidant provides an AngularJS web interface that allows end-users to easily manage secrets, the mappings of secrets to services and the history of changes.
 
 # landing cta
   cta:
@@ -33,8 +36,8 @@ en:
 
 # index
   index:
-    headline: Your secret keeper for service credentials
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, from the developers at Lyft
+    headline: Your secret keeper
+    description: Confidant is a open source secret management service that provides user-friendly storage and access to secrets in a secure way, from the developers at Lyft
 
 # footer
   built:

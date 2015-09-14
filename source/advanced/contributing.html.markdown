@@ -1,4 +1,8 @@
-# Project Templates
+---
+title: Installation
+---
+
+# Installation
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum, mi vitae sollicitudin convallis, nisi purus interdum est, quis tincidunt sapien nunc nec lacus. Donec convallis, dolor vitae fermentum cursus, odio enim ultricies diam, eget volutpat erat augue a elit. 
 

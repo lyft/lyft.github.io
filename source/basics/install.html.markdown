@@ -4,39 +4,47 @@ title: Installation
 
 # Installation
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum, mi vitae sollicitudin convallis, nisi purus interdum est, quis tincidunt sapien nunc nec lacus. Donec convallis, dolor vitae fermentum cursus, odio enim ultricies diam, eget volutpat erat augue a elit. 
+As mentioned in the Quickstart guide, Confidant is available as a docker image,
+but if you want to install Confidant on an AWS instance instead, this guide
+will get you started.
 
-Phasellus euismod eros in rhoncus dignissim. Morbi neque nunc, elementum vel metus vitae, vulputate hendrerit nibh. Maecenas bibendum dui ut mi congue, at dignissim lectus tempus. Quisque ac metus egestas, iaculis magna ut, fringilla tortor. Donec dignissim augue non dapibus fermentum. Praesent ac porta nunc, iaculis dapibus orci. Pellentesque tempus elit vehicula, elementum odio non, elementum augue. 
+Assumptions:
 
-Duis quis quam facilisis, porta augue in, interdum elit. Nunc sit amet lacus eu ligula euismod pellentesque sit amet sed erat. Vivamus ornare rutrum diam eu elementum. Nam in odio purus. Also, [this is a link](http://lyft.com).
+1. Using Ubuntu or Debian (please help with non-Ubuntu/Debian install
+   instructions!)
+1. Using gunicorn as the wsgi server
+1. Using an ELB in front of confidant
+1. Installation location: /srv/confidant/venv
+1. venv location: /srv/confidant/venv
+1. node\_modules location: /srv/confidant/node\_modules
 
+## Clone Confidant
 
 ```bash
-$ gem install confidant
-```
-## header 2
-
-Here is an example of an html codeblock:
-
-``` html
-<html>
-<head>
-  <title>My Site</title>
-</head>
-<body>
-  <%= yield %>
-</body>
-</html>
+cd /srv
+git clone https://github.com/lyft/confidant
 ```
 
-Here is an example of a ruby codeblock:
+## Make a virtualenv and install pip requirements
 
-``` ruby
-page "/admin/*", :layout => "admin"
+```bash
+cd /srv/confidant
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+pip install gunicorn
+deactivate
 ```
 
-Here's a list:
+## Build the frontend
 
-* Lorem ipsum `example`
-* Lorem ipsum `example`
-* Lorem ipsum `example`
+```bash
+cd /srv/confidant/confidant
+sudo apt-get install ruby-full npm nodejs nodejs-legacy
+gem install compass
+npm install grunt-cli
+npm install
+grunt build
+```
+
+That's it. Now move on to the configuration section.
