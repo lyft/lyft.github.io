@@ -95,3 +95,231 @@ export GOOGLE_AUTH_EMAIL_SUFFIX='@example.com'
 In the above configuration, Confidant will limit authentication to users with
 the email domain @example.com. Additionally, Confidant will look in the
 users.yaml file for a list of email addresses allowed to access Confidant.
+
+## KMS key policy configuration
+
+Confidant needs to have special KMS key policy for both the at-rest
+KMS_MASTER_KEY and the authentication AUTH_KEY.
+
+Here's an example key policy for the at-rest encryption key, KMS_MASTER_KEY, assuming the
+above configuration. Note the following:
+
+1. The "Enable IAM User Permissions" policy ensures that IAM users in your account
+   that have the proper IAM permissions can manage this key. This is here to
+   ensure you don't lock yourself out of the key.
+1. The "Allow access for Key Administrators" policy ensures that a special IAM
+   user can manage the KMS key.
+1. The "Allow use of the key" policy ensures that confidant can use the key.
+
+```json
+{
+  "Version" : "2012-10-17",
+  "Id" : "key-consolepolicy-1",
+  "Statement" : [ {
+    "Sid" : "Enable IAM User Permissions",
+    "Effect" : "Allow",
+    "Principal" : {
+      "AWS" : "arn:aws:iam::12345:root"
+    },
+    "Action" : "kms:*",
+    "Resource" : "*"
+  }, {
+    "Sid" : "Allow access for Key Administrators",
+    "Effect" : "Allow",
+    "Principal" : {
+      "AWS" : "arn:aws:iam::12345:user/myadminuser"
+    },
+    "Action" : [ "kms:Describe*", "kms:List*", "kms:Create*", "kms:Revoke*",
+"kms:Enable*", "kms:Get*", "kms:Disable*", "kms:Delete*", "kms:Put*",
+"kms:Update*" ],
+    "Resource" : "*"
+  }, {
+    "Sid" : "Allow use of the key",
+    "Effect" : "Allow",
+    "Principal" : {
+      "AWS" : "arn:aws:iam::12345:role/confidant-production"
+    },
+    "Action" : [ "kms:Decrypt", "kms:GenerateDataKey*", "kms:ReEncrypt*",
+"kms:DescribeKey", "kms:Encrypt", "kms:GenerateRandom" ],
+    "Resource" : "*"
+  } ]
+}
+```
+
+Here's an example key policy for the authentication key, AUTH_KEY, assuming the
+above configuration. Note the following:
+
+1. The "Enable IAM User Permissions" policy ensures that IAM users in your account
+   that have the proper IAM permissions can manage this key. This is here to
+   ensure you don't lock yourself out of the key.
+1. The "Allow access for Key Administrators" policy ensures that a special IAM
+   user can manage the KMS key.
+1. The "Allow use of the key" policy ensures that confidant can use the key.
+1. The "Allow attachment of persistent resources" policy ensures that confidant
+   can add and revoke grants for the auth key, which is necessary to give
+   access to context specific encrypt and decrypt calls for service IAM roles.
+
+
+```json
+{
+  "Version" : "2012-10-17",
+  "Id" : "key-consolepolicy-1",
+  "Statement" : [ {
+    "Sid" : "Enable IAM User Permissions",
+    "Effect" : "Allow",
+    "Principal" : {
+      "AWS" : "arn:aws:iam::12345:root"
+    },
+    "Action" : "kms:*",
+    "Resource" : "*"
+  }, {
+    "Sid" : "Allow access for Key Administrators",
+    "Effect" : "Allow",
+    "Principal" : {
+      "AWS" : "arn:aws:iam::12345:user/myadminuser"
+    },
+    "Action" : [ "kms:Describe*", "kms:List*", "kms:Create*", "kms:Revoke*",
+"kms:Enable*", "kms:Get*", "kms:Disable*", "kms:Delete*", "kms:Put*",
+"kms:Update*" ],
+    "Resource" : "*"
+  }, {
+    "Sid" : "Allow use of the key",
+    "Effect" : "Allow",
+    "Principal" : {
+      "AWS" : "arn:aws:iam::12345:role/confidant-production"
+    },
+    "Action" : [ "kms:Decrypt", "kms:GenerateDataKey*", "kms:ReEncrypt*",
+"kms:DescribeKey", "kms:Encrypt", "kms:GenerateRandom" ],
+    "Resource" : "*"
+  }, {
+    "Sid" : "Allow attachment of persistent resources",
+    "Effect" : "Allow",
+    "Principal" : {
+      "AWS" : "arn:aws:iam::12345:role/confidant-production"
+    },
+    "Action" : [ "kms:ListGrants", "kms:CreateGrant", "kms:RevokeGrant" ],
+    "Resource" : "*"
+  } ]
+}
+```
+
+## Confidant IAM role configuration
+
+Confidant needs some IAM policies to properly function. Here's some example
+policies, based on the above configuration:
+
+A policy to find instance profiles, so that Confidant can know which IAM roles
+exist. This is to make it easier for users to find which services they can
+create.
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "iam:GetInstanceProfile",
+                "iam:ListInstanceProfiles"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+Allow Confidant access to its DynamoDB table. We restrict DeleteTable access,
+because the application should never be able to do that.
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "dynamodb:*"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:dynamodb:*:*:table/confidant-production",
+                "arn:aws:dynamodb:*:*:table/confidant-production/*"
+            ]
+        },
+        {
+            "Action": [
+                "dynamodb:DeleteTable"
+            ],
+            "Effect": "Deny",
+            "Resource": [
+                "arn:aws:dynamodb:*:*:table/confidant-production"
+            ]
+        }
+    ]
+}
+```
+
+If you're using S3 auth, you'll also need to allow Confidant to read/write
+objects in its S3 bucket/path.
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3:::example-bucket/confidant-production",
+                "arn:aws:s3:::example-bucket/confidant-production/*"
+            ]
+        },
+        {
+            "Action": [
+                "s3:Get*",
+                "s3:List*"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3:::example-bucket/confidant-production",
+                "arn:aws:s3:::example-bucket/confidant-production/*"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "s3:prefix": [
+                        "confidant-production",
+                        "confidant-production/*"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+
+In each client using S3 auth, it's necessary to provide access to the service's
+specific key. For instance, here's an example policy that would need to go into
+myservice1's IAM role.
+
+```json
+{
+
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3:::example-bucket/confidant-production/myservice1"
+            ]
+        }
+    ]
+}
+```
+
+There's no special client configuration necessary to use KMS auth, since that's
+being managed by the creation of grants on the KEY auth key.
