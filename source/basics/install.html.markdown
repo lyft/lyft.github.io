@@ -8,35 +8,43 @@ As mentioned in the Quickstart guide, Confidant is available as a docker image,
 but if you want to install Confidant on an AWS instance instead, this guide
 will get you started.
 
-Duis quis quam facilisis, porta augue in, interdum elit. Nunc sit amet lacus eu ligula euismod pellentesque sit amet sed erat. Vivamus ornare rutrum diam eu elementum. Nam in odio purus. Also, [this is a link](http://lyft.com).
+Assumptions:
 
+1. Using Ubuntu or Debian (please help with non-Ubuntu/Debian install
+   instructions!)
+1. Using gunicorn as the wsgi server
+1. Using an ELB in front of confidant
+1. Installation location: /srv/confidant/venv
+1. venv location: /srv/confidant/venv
+1. node\_modules location: /srv/confidant/node\_modules
+
+## Clone Confidant
 
 ```bash
-$ gem install confidant
-```
-## 
-
-Here is an example of an html codeblock:
-
-``` html
-<html>
-<head>
-  <title>My Site</title>
-</head>
-<body>
-  <%= yield %>
-</body>
-</html>
+cd /srv
+git clone https://github.com/lyft/confidant
 ```
 
-Here is an example of a ruby codeblock:
+## Make a virtualenv and install pip requirements
 
-``` ruby
-page "/admin/*", :layout => "admin"
+```bash
+cd /srv/confidant
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+pip install gunicorn
+deactivate
 ```
 
-Here's a list:
+## Build the frontend
 
-* Lorem ipsum `example`
-* Lorem ipsum `example`
-* Lorem ipsum `example`
+```bash
+cd /srv/confidant/confidant
+sudo apt-get install ruby-full npm nodejs nodejs-legacy
+gem install compass
+npm install grunt-cli
+npm install
+grunt build
+```
+
+That's it. Now move on to the configuration section.

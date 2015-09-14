@@ -37,7 +37,7 @@ en:
 # index
   index:
     headline: Your secret keeper
-    description: Confidant is a Free Open Source (Apache2 licensed) secret management service, from the developers at Lyft, that extends Amazon Web Services (AWS) IAM, KMS and DynamoDB services to store and provide access to secrets in a user-friendly and secure way.
+    description: Confidant is a open source secret management service that provides user-friendly storage and access to secrets in a secure way, from the developers at Lyft
 
 # footer
   built:
