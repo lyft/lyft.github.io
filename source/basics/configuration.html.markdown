@@ -99,9 +99,9 @@ users.yaml file for a list of email addresses allowed to access Confidant.
 ## KMS key policy configuration
 
 Confidant needs to have special KMS key policy for both the at-rest
-KMS_MASTER_KEY and the authentication AUTH_KEY.
+KMS\_MASTER\_KEY and the authentication AUTH\_KEY.
 
-Here's an example key policy for the at-rest encryption key, KMS_MASTER_KEY, assuming the
+Here's an example key policy for the at-rest encryption key, KMS\_MASTER\_KEY, assuming the
 above configuration. Note the following:
 
 1. The "Enable IAM User Permissions" policy ensures that IAM users in your account
@@ -146,7 +146,7 @@ above configuration. Note the following:
 }
 ```
 
-Here's an example key policy for the authentication key, AUTH_KEY, assuming the
+Here's an example key policy for the authentication key, AUTH\_KEY, assuming the
 above configuration. Note the following:
 
 1. The "Enable IAM User Permissions" policy ensures that IAM users in your account
