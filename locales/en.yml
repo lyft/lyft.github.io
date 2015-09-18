@@ -14,7 +14,7 @@ en:
     advanced:
       title: Advanced
       threat_model: Threat Model
-      service_to_service_auth: Service-to-service authentication/encryption
+      service_to_service_auth: Service-to-service authentication and encryption
       contributing: Contributing
 
   introduction:
