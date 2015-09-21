@@ -25,7 +25,7 @@ export AUTH_CONTEXT='confidant-production'
 # The KMS key used for auth.
 export AUTH_KEY='authnz-production'
 # A long randomly generated string used for the google OAuth2 flow.
-AUTHOMATIC_SALT='H39bfLCqLbrYrFyiJIxkK0uf12rlzvgjgo9FqOnttPXIdAAuyQ'
+export AUTHOMATIC_SALT='H39bfLCqLbrYrFyiJIxkK0uf12rlzvgjgo9FqOnttPXIdAAuyQ'
 # The DynamoDB table name for storage.
 export DYNAMODB_TABLE='confidant-production'
 # Set the gevent resolver to ares; see:
