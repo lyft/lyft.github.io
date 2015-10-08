@@ -61,30 +61,7 @@ export GRAPHITE_USERNAME='mygraphiteuser'
 export GRAPHITE_PASSWORD='mylongandsupersecuregraphitepassword'
 ```
 
-Confidant support an authentication method for services other than KMS auth,
-that uses S3 folders and IAM protection. Unless you have a strong need to use
-this, you should use KMS auth, as it's generally more secure and some future
-features may be limited to KMS auth mode:
-
-```bash
-export USE_SERVICE_KEYS='true'
-export S3_BUCKET='example-bucket'
-export S3_PREFIX='confidant-production'
-```
-
-The above configuration will store keys for services myservice1, myservice2 and
-mysevice3 in the following folders:
-
-* s3://example-bucket/confidant-production/myservice1
-* s3://example-bucket/confidant-production/myservice2
-* s3://example-bucket/confidant-production/myservice3
-
-Then we can restrict access to each subfolder to its related IAM role, so IAM
-role myservice1, myservice2, and myservice3 would be able to read from each
-folder respectively and the confidant-production service would be able to read
-and write to confidant-production/*.
-
-It's also possible to restrict access to a subset of users that authenticate
+It's possible to restrict access to a subset of users that authenticate
 using Google authentication:
 
 ```bash
