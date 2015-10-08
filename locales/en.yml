@@ -16,6 +16,7 @@ en:
       threat_model: Threat Model
       service_to_service_auth: Service-to-service authentication and encryption
       contributing: Contributing
+      data_schema: Data Schema
 
   introduction:
     first:

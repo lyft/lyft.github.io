@@ -1,42 +1,33 @@
 ---
-title: Installation
+title: Contributing
 ---
 
-# Installation
+# Contributing
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum, mi vitae sollicitudin convallis, nisi purus interdum est, quis tincidunt sapien nunc nec lacus. Donec convallis, dolor vitae fermentum cursus, odio enim ultricies diam, eget volutpat erat augue a elit. 
+## Contributing code
 
-Phasellus euismod eros in rhoncus dignissim. Morbi neque nunc, elementum vel metus vitae, vulputate hendrerit nibh. Maecenas bibendum dui ut mi congue, at dignissim lectus tempus. Quisque ac metus egestas, iaculis magna ut, fringilla tortor. Donec dignissim augue non dapibus fermentum. Praesent ac porta nunc, iaculis dapibus orci. Pellentesque tempus elit vehicula, elementum odio non, elementum augue. 
+### Sign the Contributor License Agreement (CLA) (not yet available)
 
-Duis quis quam facilisis, porta augue in, interdum elit. Nunc sit amet lacus eu ligula euismod pellentesque sit amet sed erat. Vivamus ornare rutrum diam eu elementum. Nam in odio purus. Also, [this is a link](http://lyft.com).
+We require a CLA for code contributions, so before we can accept a pull request
+we need to have a signed CLA. Please send signed copies of the form to TBD.
 
+### File issues in Github
 
-```bash
-$ gem install confidant
-```
-## header 2
+In general all enhancements or bugs should be tracked via github issues before
+PRs are submitted. We don't require them, but it'll help us plan and track.
 
-Here is an example of an html codeblock:
+When submitting bugs through issues, please try to be as descriptive as
+possible. It'll make it easier and quicker for everyone if the developers can
+easily reproduce your bug.
 
-``` html
-<html>
-<head>
-  <title>My Site</title>
-</head>
-<body>
-  <%= yield %>
-</body>
-</html>
-```
+### Submit pull requests
 
-Here is an example of a ruby codeblock:
+Our only method of accepting code changes is through github pull requests.
 
-``` ruby
-page "/admin/*", :layout => "admin"
-```
+## Development guide
 
-Here's a list:
+### Development using docker
 
-* Lorem ipsum `example`
-* Lorem ipsum `example`
-* Lorem ipsum `example`
+Confidant comes with Dockerfile and docker-compose.yml files. You can use these
+to run a local development environment. As of right now it's necessary to have
+real AWS credentials and a KMS key created with proper IAM privileges.
