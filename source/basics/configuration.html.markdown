@@ -38,7 +38,7 @@ export GOOGLE_OAUTH_CONSUMER_SECRET='123456789abcdefghijklmnop'
 export KMS_MASTER_KEY='confidant-production'
 # The Redis server used for sessions.
 export REDIS_URL='redis://localhost:6381'
-# A long randomly generated string for CLDR protection.
+# A long randomly generated string for CSRF protection.
 export SESSION_SECRET='aBVmJA3zv6zWGjrYto135hkdox6mW2kOu7UaXIHK8ztJvT8w5O'
 ```
 
@@ -72,6 +72,16 @@ export GOOGLE_AUTH_EMAIL_SUFFIX='@example.com'
 In the above configuration, Confidant will limit authentication to users with
 the email domain @example.com. Additionally, Confidant will look in the
 users.yaml file for a list of email addresses allowed to access Confidant.
+
+It's possible to customize portions of the angularjs application as well.
+Currently you can add a documentation section to the credential details view.
+We'd like to make more customization available. Please open a github issue with
+specific customizations you'd like focused on first. The custom js/css/html
+will be served from a directory you specify:
+
+```bash
+export CUSTOM_FRONTEND_DIRECTORY='/srv/confidant-static'
+```
 
 ## KMS key policy configuration
 
