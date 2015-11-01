@@ -4,7 +4,7 @@
 
   @include media($medium-screen-up) {
     padding: 0 0 6em;
-    margin-top: 0;
+    margin-top: 2em;
   }
 
   &-description {
@@ -13,11 +13,9 @@
 
   &-button-fill {
     @include button-filled($red);
-    margin: 2em 0.5em;
   }
 
   &-button-outline {
     @include button-outline($red, $red);
-    margin: 2em 0.5em;
   }
 }

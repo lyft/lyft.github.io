@@ -7,7 +7,6 @@ layout: layout
   <section class="body-content-container wrap-container" data-waypoint="hero-content">
     <h2 class="hero-headline"><%= t("index.headline") %></h2>
     <h3 class="hero-description"><%= t("index.description") %></h3>
-
     <div class="hero-banner-container">
       <div class="laptop">
       </div>
@@ -16,6 +15,7 @@ layout: layout
 </header>
 
 <div class="body-content-container wrap-container" role="main">
+  <%= partial 'partials/main_cta' %>
   <section class="introduction">
     <div class="introduction-container" data-waypoint="introduction-container">
       <div class="introduction-item second-graphic">
@@ -68,7 +68,6 @@ layout: layout
 
 <div class="landing-cta">
   <section class="wrap-container">
-    <h2 class="landing-cta-description"><%= t("cta.title") %></h2>
     <%= link_to t("cta.docs"),
       "#{locale_prefix}/basics/install/", class: "landing-cta-button-fill" %>
     <%= link_to t("cta.github"),

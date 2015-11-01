@@ -7,8 +7,10 @@
 
     <ul class="global-nav-list">
       <li class="global-nav-item">
-        <%= link_to t("navigation.github"),
-          "//github.com/lyft/confidant", class: "cta-link-nav" %>
+        <%= partial 'partials/twitter_widget' %>
+      </li>
+      <li class="global-nav-item">
+        <%= partial 'partials/github_widget' %>
       </li>
       <li class="global-nav-item">
         <%= link_to t("navigation.docs"),
