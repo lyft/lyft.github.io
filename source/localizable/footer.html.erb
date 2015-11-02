@@ -9,12 +9,12 @@
       <article class="footer-contact">
         <ul class="footer-contact-list">
           <li class="footer-contact-list-item twitter-link">
-            <%= link_to t("built.twitter"), "//twitter.com/lyft" %>
+            <%= partial 'partials/twitter_widget' %>
           </li>
           <li class="footer-contact-list-item github-link">
-            <%= link_to t("built.github"), "//github.com/lyft/confidant" %>
+            <%= partial 'partials/github_widget' %>
           </li>
-          <li class="footer-contact-list-item github-link">
+          <li class="footer-contact-list-item">
             <%= link_to t("built.download"), "//www.lyft.com/app" %>
           </li>
         </ul>

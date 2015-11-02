@@ -73,7 +73,6 @@
   @include media($medium-screen-up) {
     display: inline-block;
     float: left;
-    margin-right: 2em;
   }
 }
 
@@ -95,3 +94,6 @@
   width: 82px;
 }
 
+.github-link {
+  margin-top: -10px;
+}

@@ -27,11 +27,7 @@
 
 .global-nav-item {
   display: inline-block;
-  margin-right: 0.5em;
-
-  &:last-child {
-    margin-right: 0;
-  }
+  margin-right: 0;
 
   a {
     color: $global-nav-link-color;
@@ -40,10 +36,6 @@
       color: $global-nav-link-hover-color;
     }
   }
-
-  @include media($medium-screen-up) {
-    margin-right: 2em;
-  }
 }
 
 a.cta-link-nav-filled {
@@ -51,3 +43,18 @@ a.cta-link-nav-filled {
   padding: 0px 15px;
 }
 
+.twitter-share-button {
+  display: none;
+
+  @include media($medium-screen-up) {
+    display: inline-block;
+    margin-right: 1em;
+    position: relative !important;
+    top: 4px;
+  }
+}
+
+.github-btn {
+  position: relative;
+  top: 14px;
+}
