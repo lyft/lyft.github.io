@@ -1,5 +1,5 @@
-Confidant: Your secret keeper
-================
+lyft.github.io
+==============
 
 ## Updating the docs
 
