@@ -1,0 +1,13 @@
+# Site settings
+baseurl = "http://lyft.github.io"
+languageCode = "en-us"
+title = "Lyft Open Source"
+theme = "lyft"
+
+[params]
+    custom_css = []
+    custom_js  = []
+    [params.navigation]
+        brand = "Lyft Open Source"
+    [params.header]
+        image = "hero.jpg"

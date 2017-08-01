@@ -10,3 +10,4 @@ bin
 build
 Gemfile.lock
 source/mint/config/db.php
+oss/public
