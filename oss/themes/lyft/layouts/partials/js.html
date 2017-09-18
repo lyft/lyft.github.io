@@ -1,0 +1,12 @@
+{{ "<!-- Bootstrap Core JavaScript -->" | safeHTML }}
+<script src="{{ .Site.BaseURL }}js/jquery-2.2.4.min.js"></script>
+{{ "<!-- Bootstrap Core JavaScript -->" | safeHTML }}
+<script src="{{ .Site.BaseURL }}js/tether.min.js"></script>
+{{ "<!-- Bootstrap Core JavaScript -->" | safeHTML }}
+<script src="{{ .Site.BaseURL }}js/bootstrap.min.js"></script>
+{{ "<!-- Custom Theme JavaScript -->" | safeHTML }}
+<script src="{{ .Site.BaseURL }}js/lyft-oss.js"></script>
+{{ "<!-- Custom JavaScript files -->" | safeHTML }}
+{{ range .Site.Params.custom_js }}
+<script src="{{ . | absURL }}"></script>
+{{ end }}
