@@ -11,9 +11,11 @@
         "develop": "gatsby develop",
         "format": "prettier --write \"src/**/*.ts*\"",
         "validate-json": "ajv validate -s projects.schema.json -d projects.json",
+        "pretest": "yarn lint",
         "test": "yarn run validate-json && tsc --pretty",
         "deploy": "gatsby build && gh-pages -d public",
-        "precommit": "lint-staged"
+        "precommit": "lint-staged",
+        "lint": "tslint --project . 'src/**/*.{ts,tsx}' --format codeFrame"
     },
     "lint-staged": {
         "*.{js,ts,tsx,json,css,md}": ["prettier --write", "git add"]
@@ -39,6 +41,8 @@
         "prettier": "^1.8.2",
         "react-helmet": "^5.2.0",
         "styled-components": "^3.1.6",
+        "tslint": "^5.9.1",
+        "tslint-config-prettier": "^1.7.0",
         "typography": "^0.16.6",
         "typography-theme-bootstrap": "^0.16.7",
         "typography-theme-doelger": "^0.15.11"

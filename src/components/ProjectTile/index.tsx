@@ -54,31 +54,31 @@ const LinkToSource = styled.a.attrs({ target: '_blank' })`
 `;
 
 const TagIcon = styled.img.attrs({
-    src: tagIcon
+    src: tagIcon,
 })`
     width: 1rem;
     margin: 0;
     opacity: 0.5;
     vertical-align: middle;
-`
+`;
 
 const GithubIcon = styled.img.attrs({
-    src: githubIcon
+    src: githubIcon,
 })`
     opacity: 0.5;
     vertical-align: top;
     width: 1rem;
     margin: 0;
-`
+`;
 
 const GlobeIcon = styled.img.attrs({
-    src: globeIcon
-}) `
+    src: globeIcon,
+})`
     opacity: 0.5;
     vertical-align: top;
     width: 1rem;
     margin: 0;
-`
+`;
 
 const CardFooter = styled.div`
     display: flex;
@@ -92,7 +92,7 @@ const CardFooter = styled.div`
             text-align: center;
         }
     }
-`
+`;
 
 /** A tile for a open source project */
 export class ProjectTile extends React.Component<Project> {
@@ -107,9 +107,7 @@ export class ProjectTile extends React.Component<Project> {
                     {categories.map((category, i) => <Category key={i}>{category}</Category>)}
                 </p>
                 <CardFooter>
-                    <div>
-                        {languages.map((language, i) => <LanguageIcon language={language} key={i} />)}
-                    </div>
+                    <div>{languages.map((language, i) => <LanguageIcon language={language} key={i} />)}</div>
                     <div>
                         <LinkToWebsite href={website}>
                             <GlobeIcon />&nbsp;Website
