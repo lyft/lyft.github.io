@@ -84,7 +84,10 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
      * SelectedCategoryDiv position and dimentions
      */
     private handleAllCategoryFirstRef = (el: any) => {
-        if (this.state.selectedCategoryDiv) return;
+        if (this.state.selectedCategoryDiv) {
+            return;
+        }
+
         if (el) {
             this.setSelectedCategoryDivPositionAndDimentions(el);
         }
@@ -143,7 +146,7 @@ const Category: React.StatelessComponent<CategoryProps> = ({ category, onClick, 
         e.preventDefault();
         onClick(category, e.currentTarget);
     };
-    const refHandler = reference || ((_e: any) => {});
+    const refHandler = reference || ((_: any) => undefined);
     return (
         <CategoryLink selected={selected} innerRef={refHandler} onClick={onClickHandler}>
             {text}
