@@ -15,7 +15,7 @@
     "deploy": "gatsby build && gh-pages -d public"
   },
   "dependencies": {
-    "@types/node": "^8.0.7",
+    "@types/node": "^9.4.4",
     "@types/react": "16.0.36",
     "@types/react-dom": "16.0.3",
     "@types/react-helmet": "^5.0.3",
@@ -36,5 +36,8 @@
     "typography": "^0.16.6",
     "typography-theme-bootstrap": "^0.16.7",
     "typography-theme-doelger": "^0.15.11"
+  },
+  "resolutions": {
+    "**/phantomjs-prebuilt": "2.1.8"
   }
 }
