@@ -1,0 +1,41 @@
+{
+  "name": "lyft-oss-website",
+  "description": "Lyft OSS Website",
+  "version": "1.0.0",
+  "author": "Mohsen Azimi <me@azimi.me>",
+  "scripts": {
+    "prestart": "yarn && yarn run validate-json",
+    "start": "gatsby develop",
+    "prebuild": "yarn run validate-json",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"src/**/*.ts*\"",
+    "validate-json": "ajv validate -s projects.schema.json -d projects.json",
+    "test": "yarn run validate-json && tsc --pretty",
+    "deploy": "gatsby build && gh-pages -d public"
+  },
+  "dependencies": {
+    "@types/node": "^8.0.7",
+    "@types/react": "16.0.36",
+    "@types/react-dom": "16.0.3",
+    "@types/react-helmet": "^5.0.3",
+    "ajv-cli": "^3.0.0",
+    "extend": "^3.0.1",
+    "gatsby": "^1.9.188",
+    "gatsby-link": "^1.6.28",
+    "gatsby-plugin-favicon": "^2.1.1",
+    "gatsby-plugin-react-helmet": "^2.0.4",
+    "gatsby-plugin-styled-components": "^2.0.5",
+    "gatsby-plugin-typescript": "^1.4.10",
+    "gatsby-plugin-typography": "^1.7.13",
+    "gh-pages": "^1.1.0",
+    "github-language-colors": "https://github.com/doda/github-language-colors",
+    "normalize.css": "^8.0.0",
+    "prettier": "^1.8.2",
+    "react-helmet": "^5.2.0",
+    "styled-components": "^3.1.6",
+    "typography": "^0.16.6",
+    "typography-theme-bootstrap": "^0.16.7",
+    "typography-theme-doelger": "^0.15.11"
+  }
+}
