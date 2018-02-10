@@ -43,6 +43,7 @@ export const pageQuery = graphql`
                     languages
                     categories
                     website
+                    source
                 }
             }
         }
