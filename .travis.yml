@@ -1,5 +1,5 @@
 language: node_js
-node: latest
+node_js: latest
 cache: yarn
 deploy:
   provider: pages
