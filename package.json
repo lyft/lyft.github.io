@@ -38,6 +38,6 @@
     "typography-theme-doelger": "^0.15.11"
   },
   "resolutions": {
-    "**/phantomjs-prebuilt": "2.1.8"
+    "**/phantomjs-prebuilt": "2.1.16"
   }
 }
