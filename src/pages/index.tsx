@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Link from 'gatsby-link';
 
-import { Project, ProjectTile } from '../components/project-tile';
+import { Project, ProjectTile } from '../components/ProjectTile';
 import { Banner } from '../components/banner';
 import { Navigation, ALL_CATEGORIES } from '../components/navigation';
 

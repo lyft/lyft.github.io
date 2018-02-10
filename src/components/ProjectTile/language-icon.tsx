@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import * as languageColorsMap from 'github-language-colors/colors.json';
 
-import * as colors from '../common/colors';
+import * as colors from '../../common/colors';
 
 interface IconProps {
     language: string;

@@ -1,4 +1,5 @@
 declare module '*.png';
+declare module '*.svg';
 declare module 'github-language-colors/colors.json' {
     const colors: { [language: string]: string };
     export = colors;
