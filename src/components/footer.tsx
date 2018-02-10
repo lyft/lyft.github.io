@@ -5,31 +5,32 @@ import styled from 'styled-components';
 import * as colors from '../common/colors';
 
 const FooterWrapper = styled.div`
-    background: ${colors.bone};
+    background: ${colors.grayDark};
     padding: 2rem 1rem;
     text-align: center;
 
     a {
         padding: 0 1rem;
-        color: ${colors.slate};
+        color: ${colors.grayLight};
         text-decoration: none;
         font-family: monospace;
+        display: inline-block;
     }
 `;
 
 export const Footer = () => (
     <FooterWrapper>
-        <Link target="_blank" to="https://github.com/lyft/">
+        <a target="_blank" href="https://github.com/lyft/">
             Lyft Github Organization
-        </Link>
-        <Link target="_blank" to="https://eng.lyft.com/">
+        </a>
+        <a target="_blank" href="https://eng.lyft.com/">
             Lyft Engineering Blog
-        </Link>
-        <Link target="_blank" to="https://www.lyft.com/jobs">
+        </a>
+        <a target="_blank" href="https://www.lyft.com/jobs">
             Come work with us!
-        </Link>
-        <Link target="_blank" to="https://www.lyft.com/lyft/lyft.github.io">
+        </a>
+        <a target="_blank" href="https://www.github.com/lyft/lyft.github.io">
             Source of this website
-        </Link>
+        </a>
     </FooterWrapper>
 );

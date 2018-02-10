@@ -17,7 +17,7 @@ interface IndexPageProps {
 }
 
 interface IndexPageState {
-    selectedCategory?: string
+    selectedCategory?: string;
 }
 
 export default class extends React.Component<IndexPageProps, IndexPageState> {
@@ -28,26 +28,28 @@ export default class extends React.Component<IndexPageProps, IndexPageState> {
                 <Banner />
                 <Navigation categories={this.categories} onCategoryChanged={this.onCategoryChanged} />
                 <div>
-                    {this.props.data.site.siteMetadata.projects.map((project, i) => (
-                        this.shouldRenderProject(project) && <ProjectTile {...project} key={i} />
-                    ))}
+                    {this.props.data.site.siteMetadata.projects.map(
+                        (project, i) => this.shouldRenderProject(project) && <ProjectTile {...project} key={i} />,
+                    )}
                 </div>
             </div>
         );
     }
 
     private shouldRenderProject(project: Project) {
-        const {selectedCategory} = this.state;
-        if (selectedCategory === undefined ) { return true }
+        const { selectedCategory } = this.state;
+        if (selectedCategory === undefined) {
+            return true;
+        }
 
         return project.categories.includes(selectedCategory);
     }
 
     private onCategoryChanged = (category: string | symbol) => {
         if (category === ALL_CATEGORIES) {
-            this.setState({selectedCategory: undefined})
+            this.setState({ selectedCategory: undefined });
         } else {
-            this.setState({selectedCategory: category as string})
+            this.setState({ selectedCategory: category as string });
         }
     };
 

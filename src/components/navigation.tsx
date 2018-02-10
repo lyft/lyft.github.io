@@ -16,7 +16,7 @@ interface NavigationProps {
  */
 export class Navigation extends React.Component<NavigationProps> {
     private onCategoryClicked = (category: string | symbol) => {
-        this.props.onCategoryChanged(category)
+        this.props.onCategoryChanged(category);
     };
     private selectAll = (_: string | symbol) => {
         this.props.onCategoryChanged(ALL_CATEGORIES);

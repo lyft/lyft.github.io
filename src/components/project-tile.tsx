@@ -15,8 +15,8 @@ export interface Project {
 
 // prototype: https://codepen.io/mohsen1/pen/bLdNoJ?editors=0110
 const Card = styled.div`
-  border: 1px solid ${colors.brandInfo};
-  /* background: ${colors.grayLight}; */
+  /* border: 1px solid ${colors.brandInfo}; */
+  background: ${colors.white};
   padding: 1rem;
   margin: 1rem 0;
 

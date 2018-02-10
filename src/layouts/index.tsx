@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import styled from 'styled-components';
 
 import * as colors from '../common/colors';
 import { Header } from '../components/header';
@@ -14,24 +15,26 @@ interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
     children: any;
 }
 
+const Wrapper = styled.div`
+    background: #f9f9f9;
+`;
+
+const Content = styled.div`
+    margin: 0 auto;
+    max-width: 960;
+    padding: 0px 1.0875rem 1.45rem;
+    padding-top: 0;
+`;
+
 class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
     public render() {
         return (
-            <div>
+            <Wrapper>
                 <Helmet title="Lyft Open Source" meta={[{ name: 'charset', content: 'utf-8' }]} />
                 <Header />
-                <div
-                    style={{
-                        margin: '0 auto',
-                        maxWidth: 960,
-                        padding: '0px 1.0875rem 1.45rem',
-                        paddingTop: 0,
-                    }}
-                >
-                    {this.props.children()}
-                </div>
+                <Content>{this.props.children()}</Content>
                 <Footer />
-            </div>
+            </Wrapper>
         );
     }
 }
