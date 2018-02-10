@@ -7,6 +7,8 @@ import * as logo from './logo@3x.png';
 import * as colors from '../common/colors';
 
 const HeaderWrapper = styled.div`
+    position: sticky;
+    top: 0;
     background: ${colors.charcoal};
     color: ${colors.white};
     margin-bottom: '1.45rem';
@@ -16,7 +18,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const LogoLink = styled(Link)`
-    padding: 1rem;
+    padding: 0.5rem;
     display: block;
 `;
 
@@ -33,7 +35,7 @@ const LogoImage = styled.img.attrs({ src: logo })`
 `;
 
 const RightNav = styled.div`
-    padding: 1rem;
+    padding: 0.5rem;
 `;
 
 const RightNavLink = styled(Link)`
@@ -57,6 +59,9 @@ export const Header = () => (
             </RightNavLink>
             <RightNavLink target="_blank" to="https://eng.lyft.com/">
                 Blog
+            </RightNavLink>
+            <RightNavLink target="_blank" to="https://www.lyft.com/jobs">
+                Jobs
             </RightNavLink>
         </RightNav>
     </HeaderWrapper>

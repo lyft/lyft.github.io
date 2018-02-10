@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 
 import * as colors from '../common/colors';
 import { Header } from '../components/header';
+import { Footer } from '../components/footer';
 import './index.css';
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
@@ -29,6 +30,7 @@ class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
                 >
                     {this.props.children()}
                 </div>
+                <Footer />
             </div>
         );
     }

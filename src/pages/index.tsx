@@ -2,6 +2,7 @@ import * as React from 'react';
 import Link from 'gatsby-link';
 
 import { Project, ProjectTile } from '../components/project-tile';
+import { Banner } from '../components/banner';
 
 interface IndexPageProps {
     data: {
@@ -21,7 +22,7 @@ export default class extends React.Component<IndexPageProps> {
     public render() {
         return (
             <div>
-                <p>Lyft relies on open-source software and likes to give back to the community.</p>
+                <Banner />
                 <div>
                     {this.props.data.site.siteMetadata.projects.map((project, i) => (
                         <ProjectTile {...project} key={i} />
