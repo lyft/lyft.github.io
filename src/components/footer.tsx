@@ -28,7 +28,7 @@ export const Footer = () => (
         <Link target="_blank" to="https://www.lyft.com/jobs">
             Come work with us!
         </Link>
-        <Link target="_blank" to="https://www.lyft.com/jobs">
+        <Link target="_blank" to="https://www.lyft.com/lyft/lyft.github.io">
             Source of this website
         </Link>
     </FooterWrapper>
