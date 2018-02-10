@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-const languageColorsMap: { [language: string]: string } = require('github-language-colors/colors.json');
+import * as languageColorsMap from 'github-language-colors/colors.json';
 
 import * as colors from '../common/colors';
 

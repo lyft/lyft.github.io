@@ -1,5 +1,9 @@
 import * as React from 'react';
 import Link from 'gatsby-link';
+import * as styled from 'styled-components';
+
+import logo from './logo@3x.png';
+
 
 import * as colors from '../common/colors';
 

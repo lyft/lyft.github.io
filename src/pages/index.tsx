@@ -41,7 +41,7 @@ export const pageQuery = graphql`
                     name
                     description
                     languages
-                    category
+                    categories
                     website
                 }
             }

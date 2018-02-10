@@ -4,11 +4,13 @@
   "version": "1.0.0",
   "author": "Mohsen Azimi <me@azimi.me>",
   "scripts": {
-    "prestart": "yarn",
+    "prestart": "yarn && yarn run validate-json",
     "start": "gatsby develop",
+    "prebuild": "yarn run validate-json",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"src/**/*.ts*\"",
+    "validate-json": "ajv validate -s projects.schema.json -d projects.json",
     "test": "tsc --pretty"
   },
   "dependencies": {
@@ -16,6 +18,7 @@
     "@types/react": "16.0.36",
     "@types/react-dom": "16.0.3",
     "@types/react-helmet": "^5.0.3",
+    "ajv-cli": "^3.0.0",
     "gatsby": "^1.9.188",
     "gatsby-link": "^1.6.28",
     "gatsby-plugin-favicon": "^2.1.1",

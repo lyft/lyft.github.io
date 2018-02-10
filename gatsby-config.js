@@ -1,4 +1,4 @@
-const projects = require('./projects.json');
+const {projects} = require('./projects.json');
 
 module.exports = {
   siteMetadata: {

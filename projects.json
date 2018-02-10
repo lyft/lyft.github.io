@@ -1,37 +1,66 @@
-[
-  {
-    "name": "Envoy",
-    "description": "Envoy is an open source edge and service proxy, designed for cloud-native applications",
-    "languages": ["C++"],
-    "website": "https://www.envoyproxy.io/",
-    "category": "Infrastructure"
-  },
-  {
-    "name": "Confidant",
-    "description": "Confidant is a open source secret management service that provides user-friendly storage and access to secrets in a secure way, from the developers at Lyft",
-    "languages": ["Python", "JavaScript"],
-    "website": "https://lyft.github.io/confidant/",
-    "category": "Security"
-  },
-  {
-    "name": "mapper",
-    "description": "A JSON deserialization library for Swift",
-    "languages": ["Swift"],
-    "website": "https://github.com/lyft/mapper",
-    "category": "iOS"
-  },
-  {
-    "name": "React to TypeScript Transform",
-    "description": "Convert React JavaScript code to TypeScript with proper typing",
-    "languages": ["TypeScript"],
-    "category": "Web",
-    "website": "https://github.com/lyft/react-javascript-to-typescript-transform"
-  },
-  {
-    "name": "Universal Async Component",
-    "description": "React Universal Async Component that works with server side rendering",
-    "languages": ["TypeScript"],
-    "category": "Web",
-    "website": "https://github.com/lyft/universal-async-component"
-  }
-]
+{
+  "$schema": "./projects.schema.json",
+  "projects": [
+    {
+      "name": "Envoy",
+      "description": "Envoy is an open source edge and service proxy, designed for cloud-native applications",
+      "languages": [
+        "C++"
+      ],
+      "website": "https://www.envoyproxy.io/",
+      "source": "https://github.com/envoyproxy/envoy",
+      "categories": [
+        "Infrastructure"
+      ]
+    },
+    {
+      "name": "Confidant",
+      "description": "Confidant is a open source secret management service that provides user-friendly storage and access to secrets in a secure way, from the developers at Lyft",
+      "languages": [
+        "Python",
+        "JavaScript"
+      ],
+      "website": "https://lyft.github.io/confidant/",
+      "source": "https://lyft.github.io/confidant/",
+      "categories": [
+        "Security"
+      ]
+    },
+    {
+      "name": "mapper",
+      "description": "A JSON deserialization library for Swift",
+      "languages": [
+        "Swift"
+      ],
+      "website": "https://github.com/lyft/mapper",
+      "source": "https://github.com/lyft/mapper",
+      "categories": [
+        "iOS"
+      ]
+    },
+    {
+      "name": "React to TypeScript Transform",
+      "description": "Convert React JavaScript code to TypeScript with proper typing",
+      "languages": [
+        "TypeScript"
+      ],
+      "categories": [
+        "Web"
+      ],
+      "website": "https://github.com/lyft/react-javascript-to-typescript-transform",
+      "source": "https://github.com/lyft/react-javascript-to-typescript-transform"
+    },
+    {
+      "name": "Universal Async Component",
+      "description": "React Universal Async Component that works with server side rendering",
+      "languages": [
+        "TypeScript"
+      ],
+      "categories": [
+        "Web"
+      ],
+      "website": "https://github.com/lyft/universal-async-component",
+      "source": "https://github.com/lyft/universal-async-component"
+    }
+  ]
+}

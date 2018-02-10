@@ -8,8 +8,9 @@ export interface Project {
     name: string;
     description: string;
     languages: string[];
-    category: string;
+    categories: string[];
     website: string;
+    source: string;
 }
 
 // prototype: https://codepen.io/mohsen1/pen/bLdNoJ?editors=0110
@@ -32,20 +33,38 @@ const Description = styled.p`
     color: ${colors.grayDark};
 `;
 
+const Category = styled.small`
+    color: ${colors.blue};
+`;
+
+const LinkToWebsite = styled.a.attrs({target: '_blank'})`
+    color: ${colors.blue};
+    text-decoration: underline;
+    margin: 0 1rem;
+`;
+
+const LinkToSource = styled.a.attrs({ target: '_blank' })`
+    color: ${colors.blue};
+    text-decoration: underline;
+    margin: 0 1rem;
+`;
+
 /** A tile for a open source project */
 export class ProjectTile extends React.Component<Project> {
     public render() {
-        const { languages, name, description, category, website } = this.props;
+        const { languages, name, description, categories, website, source } = this.props;
         return (
             <Card>
-                <a href={website} target="_blank">
-                    <Title>{name}</Title>
-                    <Description>{description}</Description>
-                    <p>
-                        <small>{category}</small>
-                    </p>
-                    {languages.map((language, i) => <LanguageIcon language={language} key={i} />)}
-                </a>
+                <Title>{name}</Title>
+                <Description>{description}</Description>
+                <p>
+                    {categories.map((category, i) => <Category key={i}>{category}</Category>)}
+                </p>
+                {languages.map((language, i) => <LanguageIcon language={language} key={i} />)}
+                <p>
+                    <LinkToWebsite href={website}>Website</LinkToWebsite>
+                    <LinkToSource href={source}>Source Code</LinkToSource>
+                </p>
             </Card>
         );
     }
