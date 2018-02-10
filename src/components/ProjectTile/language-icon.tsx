@@ -8,7 +8,7 @@ interface IconProps {
     language: string;
 }
 
-export const Icon: React.StatelessComponent<IconProps> = styled.div`
+export const Icon = styled.div`
     display: inline-block;
     padding: 0.4rem;
     margin: 0 0.2rem;

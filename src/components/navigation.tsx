@@ -6,7 +6,7 @@ import * as colors from '../common/colors';
 
 export const ALL_CATEGORIES = Symbol('All categories');
 
-const Wrapper: React.StatelessComponent = styled.div`
+const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -29,7 +29,7 @@ const SelectedCategoryBakground = styled.div`
 `;
 
 interface NavigationProps {
-    onCategoryChanged(newCategory: string | typeof ALL_CATEGORIES): void;
+    onCategoryChanged(newCategory: string | symbol): void;
     categories: string[];
 }
 
