@@ -11,7 +11,8 @@
     "develop": "gatsby develop",
     "format": "prettier --write \"src/**/*.ts*\"",
     "validate-json": "ajv validate -s projects.schema.json -d projects.json",
-    "test": "yarn run validate-json && tsc --pretty"
+    "test": "yarn run validate-json && tsc --pretty",
+    "deploy": "gatsby build && gh-pages -d public"
   },
   "dependencies": {
     "@types/node": "^8.0.7",
@@ -26,6 +27,7 @@
     "gatsby-plugin-styled-components": "^2.0.5",
     "gatsby-plugin-typescript": "^1.4.10",
     "gatsby-plugin-typography": "^1.7.13",
+    "gh-pages": "^1.1.0",
     "github-language-colors": "https://github.com/doda/github-language-colors",
     "normalize.css": "^8.0.0",
     "prettier": "^1.8.2",
