@@ -1,5 +1,7 @@
 # Lyft Open Source Webstie
 
+[![Build Status](https://travis-ci.org/mohsen1/lyft-website.svg?branch=new)](https://travis-ci.org/mohsen1/lyft-website)
+
 This is code for https://oss.lyft.com website.
 
 ## Technology stack
