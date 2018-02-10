@@ -11,6 +11,12 @@ module.exports = {
     // Add typescript stack into webpack
     `gatsby-plugin-typescript`,
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-favicon`,
       options: {
         logo: "./src/common/favicon.png",

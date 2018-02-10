@@ -53,6 +53,7 @@ export default class extends React.Component<IndexPageProps, IndexPageState> {
         }
     };
 
+    /** Get a flat list of all categories */
     private get categories() {
         return Array.from(
             new Set(

@@ -2,11 +2,11 @@ import * as React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
+import 'normalize.css/normalize.css';
 
 import * as colors from '../common/colors';
 import { Header } from '../components/header';
 import { Footer } from '../components/footer';
-import './index.css';
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
     location: {

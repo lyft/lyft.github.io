@@ -36,6 +36,8 @@ const LogoImage = styled.img.attrs({ src: logo })`
 
 const RightNav = styled.div`
     padding: 0.5rem;
+    display: flex;
+    align-items: center;
 `;
 
 const RightNavLink = styled(Link)`
