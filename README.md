@@ -6,14 +6,15 @@ This is code for https://oss.lyft.com website.
   * [GatsbyJS](https://www.gatsbyjs.org/)
   * [TypeScript](https://typescriptlang.org)
 
-## Build
+## Hacking
 
-Run
+You need to have `node` and `yarn` installed. 
 
-```
-yarn build
+Clone the repo and run following command to start the development server.
+
+```sh
+yarn start
 ```
 
 ## Deploy
-
-TODO
+Everything merged to `master` is automatically deployed.

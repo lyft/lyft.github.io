@@ -41,7 +41,7 @@ const RightNav = styled.div`
     align-items: center;
 `;
 
-const RightNavLink = styled(Link)`
+const RightNavLink = styled.a`
     color: ${colors.white};
     padding: 0 0.5rem;
     font-family: monospace;
@@ -57,13 +57,13 @@ export const Header = () => (
             </LogoTitle>
         </LogoLink>
         <RightNav>
-            <RightNavLink target="_blank" to="https://github.com/lyft/">
+            <RightNavLink target="_blank" href="https://github.com/lyft/">
                 Github
             </RightNavLink>
-            <RightNavLink target="_blank" to="https://eng.lyft.com/">
+            <RightNavLink target="_blank" href="https://eng.lyft.com/">
                 Blog
             </RightNavLink>
-            <RightNavLink target="_blank" to="https://www.lyft.com/jobs">
+            <RightNavLink target="_blank" href="https://www.lyft.com/jobs">
                 Jobs
             </RightNavLink>
         </RightNav>

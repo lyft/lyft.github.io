@@ -12,10 +12,12 @@
                     "description",
                     "languages",
                     "source",
+                    "website",
                     "categories"
                 ],
                 "properties": {
                     "name": {
+                        "description": "Short name of the project",
                         "type": "string"
                     },
                     "description": {
