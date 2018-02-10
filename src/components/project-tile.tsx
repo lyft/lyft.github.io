@@ -37,7 +37,7 @@ const Category = styled.small`
     color: ${colors.blue};
 `;
 
-const LinkToWebsite = styled.a.attrs({target: '_blank'})`
+const LinkToWebsite = styled.a.attrs({ target: '_blank' })`
     color: ${colors.blue};
     text-decoration: underline;
     margin: 0 1rem;
@@ -57,9 +57,7 @@ export class ProjectTile extends React.Component<Project> {
             <Card>
                 <Title>{name}</Title>
                 <Description>{description}</Description>
-                <p>
-                    {categories.map((category, i) => <Category key={i}>{category}</Category>)}
-                </p>
+                <p>{categories.map((category, i) => <Category key={i}>{category}</Category>)}</p>
                 {languages.map((language, i) => <LanguageIcon language={language} key={i} />)}
                 <p>
                     <LinkToWebsite href={website}>Website</LinkToWebsite>
