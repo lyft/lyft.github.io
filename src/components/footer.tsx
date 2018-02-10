@@ -11,6 +11,7 @@ const FooterWrapper = styled.div`
 
     a {
         padding: 0 1rem;
+        line-height: 2;
         color: ${colors.grayLight};
         text-decoration: none;
         font-family: monospace;

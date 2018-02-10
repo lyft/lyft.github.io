@@ -84,6 +84,14 @@ const CardFooter = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+        > div:nth-child(2) {
+            margin: 2rem 0 1rem;
+            text-align: center;
+        }
+    }
 `
 
 /** A tile for a open source project */

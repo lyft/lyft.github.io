@@ -10,6 +10,11 @@ const Wrapper: React.StatelessComponent = styled.div`
     display: flex;
     justify-content: space-between;
     position: relative;
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+        text-align: center;
+    }
 `;
 
 const SelectedCategoryBakground = styled.div`
