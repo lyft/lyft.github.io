@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 
 import * as colors from '../common/colors';
+import { sleep } from '../common/utils';
 
 export const ALL_CATEGORIES = Symbol('All categories');
 
@@ -22,17 +23,6 @@ const Wrapper = styled.div`
     }
 `;
 
-const SelectedCategoryBakground = styled.div`
-    position: absolute;
-    border-radius: 2px;
-    background: ${colors.dove};
-    transition-property: width, height, top, left;
-    transition-duration: 200ms;
-    transition-timing-function: ease-in;
-    transition-delay: 50ms;
-    z-index: 0;
-`;
-
 interface NavigationProps {
     onCategoryChanged(newCategory: string | symbol): void;
     categories: string[];
@@ -40,6 +30,8 @@ interface NavigationProps {
 
 interface NavigationState {
     selectedCategory: string | symbol;
+    /** Is transition animation between categories in progress? */
+    isTransitioning: boolean;
     selectedCategoryDiv?: {
         width: number;
         height: number;
@@ -50,27 +42,24 @@ interface NavigationState {
 
 /**
  * Allows user to select a category from a list of categories
- *
- * @todo widnow.resize needs handling
  */
 export class Navigation extends React.Component<NavigationProps, NavigationState> {
+    static TRANSITION_DURATION_MS = 300;
     constructor(props: NavigationProps) {
         super(props);
         this.state = {
+            isTransitioning: false,
             selectedCategory: ALL_CATEGORIES,
         };
     }
 
     private onCategoryClicked = (category: string | symbol, element: HTMLAnchorElement) => {
         this.props.onCategoryChanged(category);
-        this.setSelectedCategoryDivPositionAndDimentions(element);
-        this.setState({ selectedCategory: category });
-    };
-
-    private selectAll = (_: string | symbol, element: HTMLAnchorElement) => {
-        this.props.onCategoryChanged(ALL_CATEGORIES);
-        this.setSelectedCategoryDivPositionAndDimentions(element);
-        this.setState({ selectedCategory: ALL_CATEGORIES });
+        this.setState({ selectedCategory: category, isTransitioning: true });
+        sleep(0)
+            .then(() => this.setSelectedCategoryDivPositionAndDimentions(element))
+            .then(() => sleep(Navigation.TRANSITION_DURATION_MS))
+            .then(() => this.setState({ isTransitioning: false }));
     };
 
     private setSelectedCategoryDivPositionAndDimentions(element: HTMLAnchorElement) {
@@ -99,6 +88,9 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     };
 
     private isSelected(category: string | symbol) {
+        if (this.state.isTransitioning) {
+            return false;
+        }
         return category === this.state.selectedCategory;
     }
 
@@ -109,7 +101,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
                     selected={this.isSelected(ALL_CATEGORIES)}
                     reference={this.handleAllCategoryFirstRef}
                     category={ALL_CATEGORIES}
-                    onClick={this.selectAll}
+                    onClick={this.onCategoryClicked}
                 />
                 {this.props.categories.map((category, i) => (
                     <Category
@@ -119,23 +111,38 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
                         onClick={this.onCategoryClicked}
                     />
                 ))}
-                <SelectedCategoryBakground style={{ ...this.state.selectedCategoryDiv }} />
+                {this.state.isTransitioning && (
+                    <SelectedCategoryBakground style={{ ...this.state.selectedCategoryDiv }} />
+                )}
             </Wrapper>
         );
     }
 }
+
+const SelectedCategoryBakground = styled.div`
+    position: absolute;
+    border-radius: 2px;
+    background: ${colors.dove};
+    transition-property: width, height, top, left;
+    transition-duration: ${Navigation.TRANSITION_DURATION_MS}ms;
+    transition-timing-function: ease-in;
+    transition-delay: 50ms;
+    z-index: 0;
+`;
 
 const CategoryLink = styled.a.attrs({ href: '#' })`
     padding: 0.2rem 0.5rem;
     cursor: pointer;
     position: relative;
     z-index: 1;
+    border-radius: 2px;
     text-decoration: none;
     color: ${(props: { selected?: boolean }) => (props.selected ? colors.white : colors.dove)};
-    transition-property: color;
-    transition-delay: 150ms;
+    background: ${(props: { selected?: boolean }) => (props.selected ? colors.dove : colors.transparent)};
+    /* transition-property: color;
+    transition-delay: -${Navigation.TRANSITION_DURATION_MS}ms;
     transition-timing-function: ease-in;
-    transition-duration: 200ms;
+    transition-duration: ${Navigation.TRANSITION_DURATION_MS}ms; */
 `;
 
 interface CategoryProps {

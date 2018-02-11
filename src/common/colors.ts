@@ -35,3 +35,5 @@ export const brandSuccess = blue;
 export const brandInfo = frost;
 export const brandWarning = orange;
 export const brandDanger = red;
+
+export const transparent = 'transparent';
