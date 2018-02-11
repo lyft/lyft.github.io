@@ -12,8 +12,13 @@ const Wrapper = styled.div`
     position: relative;
 
     @media (max-width: 500px) {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         text-align: center;
+    }
+
+    @media (max-width: 300px) {
+        grid-template-columns: 1fr 1fr;
     }
 `;
 
