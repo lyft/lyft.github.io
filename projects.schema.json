@@ -7,14 +7,7 @@
             "items": {
                 "type": "object",
                 "description": "A Lyft Open Source project",
-                "required": [
-                    "name",
-                    "description",
-                    "languages",
-                    "source",
-                    "website",
-                    "categories"
-                ],
+                "required": ["name", "description", "languages", "source", "website", "categories"],
                 "properties": {
                     "name": {
                         "description": "Short name of the project",

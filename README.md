@@ -5,12 +5,13 @@
 This is code for lyft-oss-website.netlify.com website.
 
 ## Technology stack
-  * [GatsbyJS](https://www.gatsbyjs.org/)
-  * [TypeScript](https://typescriptlang.org)
+
+* [GatsbyJS](https://www.gatsbyjs.org/)
+* [TypeScript](https://typescriptlang.org)
 
 ## Hacking
 
-You need to have `node` and `yarn` installed. 
+You need to have `node` and `yarn` installed.
 
 Clone the repo and run following command to start the development server.
 
@@ -19,4 +20,5 @@ yarn start
 ```
 
 ## Deploy
+
 Everything merged to `master` is automatically deployed.

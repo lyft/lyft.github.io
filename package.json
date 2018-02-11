@@ -9,7 +9,7 @@
         "prebuild": "yarn run validate-json",
         "build": "gatsby build",
         "develop": "gatsby develop",
-        "format": "prettier --write \"src/**/*.ts*\"",
+        "format": "prettier --write *.{js,ts,tsx,json,css,md}",
         "validate-json": "ajv validate -s projects.schema.json -d projects.json",
         "pretest": "yarn lint",
         "test": "yarn run validate-json && tsc --pretty",
