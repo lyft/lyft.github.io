@@ -15,8 +15,9 @@ interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
     children: any;
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
     background: #f9f9f9;
+    min-height: 100vh;
 `;
 
 const Content = styled.div`

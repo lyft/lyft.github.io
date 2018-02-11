@@ -4,10 +4,12 @@ import styled from 'styled-components';
 
 import * as colors from '../common/colors';
 
-const FooterWrapper = styled.div`
+const FooterWrapper = styled.footer`
     background: ${colors.grayDark};
     padding: 2rem 1rem;
     text-align: center;
+    position: sticky;
+    top: 100%;
 
     a {
         padding: 0 1rem;

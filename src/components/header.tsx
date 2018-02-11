@@ -6,7 +6,7 @@ import * as logo from './logo@3x.png';
 
 import * as colors from '../common/colors';
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.header`
     position: sticky;
     top: 0;
     z-index: 2;
