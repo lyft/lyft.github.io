@@ -21,6 +21,7 @@ const HeaderWrapper = styled.header`
 const LogoLink = styled(Link)`
     padding: 0.5rem;
     display: block;
+    text-decoration: none;
 `;
 
 const LogoTitle = styled.h1`
