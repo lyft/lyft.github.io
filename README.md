@@ -1,13 +1,13 @@
 # Lyft Open Source Webstie
 
-[![Build Status](https://travis-ci.org/mohsen1/lyft-website.svg?branch=new)](https://travis-ci.org/mohsen1/lyft-website)
+[![Build Status](https://travis-ci.org/lyft/lyft.github.io.svg?branch=develop)](https://travis-ci.org/lyft/lyft.github.io)
 
-This is code for lyft-oss-website.netlify.com website.
+This is code for oss.lyft.com website.
 
 ## Technology stack
 
 * [GatsbyJS](https://www.gatsbyjs.org/)
-* [TypeScript](https://typescriptlang.org)
+* [TypeScript](http://www.typescriptlang.org/)
 
 ## Hacking
 
@@ -21,4 +21,4 @@ yarn start
 
 ## Deploy
 
-Everything merged to `master` is automatically deployed.
+Everything merged to the `develop` branch is automatically deployed via TravisCI.
