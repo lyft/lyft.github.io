@@ -1,4 +1,9 @@
 .bundle
+.DS_Store
+public
+.cache 
+node_modules
+dist
 .divshot-cache
 .DS_Store
 .mm-pid-*
