@@ -1,17 +1,16 @@
 .bundle
 .DS_Store
 public
-.cache 
+.cache
 node_modules
 dist
 .divshot-cache
+# Project dependencies
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
+.cache/
+dist/
+# Build directory
+public/
 .DS_Store
-.mm-pid-*
-.rbenv-version
-.ruby-version
-.rvmrc
-.sass-cache
-bin
-build
-Gemfile.lock
-source/mint/config/db.php
+yarn-error.log
