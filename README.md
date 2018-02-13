@@ -8,6 +8,7 @@ This is code for oss.lyft.com website.
 
 * [GatsbyJS](https://www.gatsbyjs.org/)
 * [TypeScript](http://www.typescriptlang.org/)
+* [Styled Components](https://www.styled-components.com/)
 
 ## Hacking
 
