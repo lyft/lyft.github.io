@@ -43,6 +43,22 @@
             "categories": ["iOS"]
         },
         {
+            "name": "Kronos",
+            "description": "Elegant NTP date library in Swift",
+            "languages": ["Swift"],
+            "website": "https://github.com/lyft/Kronos",
+            "source": "https://github.com/lyft/Kronos",
+            "categories": ["iOS"]
+        },
+        {
+            "name": "linty_fresh",
+            "description": "Surface lint errors during code review",
+            "languages": ["Python"],
+            "website": "https://github.com/lyft/linty_fresh",
+            "source": "https://github.com/lyft/linty_fresh",
+            "categories": ["Infrastructure"]
+        },
+        {
             "name": "Scissors",
             "description": "Android image cropping library",
             "languages": ["Java"],
