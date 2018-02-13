@@ -7,30 +7,28 @@ import * as globeIcon from './globe.png';
 import * as githubIcon from './github.svg';
 
 import { LanguageIcon } from './language-icon';
+import { RepositoryNode } from '../../interfaces/github';
 
-export interface Project {
-    name: string;
-    description: string;
-    languages: string[];
-    categories: string[];
-    website: string;
-    source: string;
-}
-
-// prototype: https://codepen.io/mohsen1/pen/bLdNoJ?editors=0110
 const Card = styled.div`
-  /* border: 1px solid ${colors.brandInfo}; */
-  background: ${colors.white};
-  padding: 1rem;
-  margin: 1rem 0;
+    background: ${colors.white};
+    padding: 1rem;
+    margin: 1rem 0;
 
-  * {
-    text-decoration: none;
-  }
+    * {
+        text-decoration: none;
+    }
+`;
+
+const TitleWrapper = styled.header`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 `;
 
 const Title = styled.h3`
     color: ${colors.mulberry};
+    margin: 0;
 `;
 
 const Description = styled.p`
@@ -95,29 +93,45 @@ const CardFooter = styled.div`
 `;
 
 /** A tile for a open source project */
-export class ProjectTile extends React.Component<Project> {
+export class ProjectTile extends React.Component<RepositoryNode> {
     public render() {
-        const { languages, name, description, categories, website, source } = this.props;
+        const {
+            languages,
+            name,
+            description,
+            /* categories, website, source */ url: websiteUrl,
+            stargazers,
+            homepageUrl,
+        } = this.props;
         return (
             <Card>
-                <Title>{name}</Title>
+                <TitleWrapper>
+                    <Title>{name}</Title>
+                    <div>★{stargazers.totalCount}</div>
+                </TitleWrapper>
                 <Description>{description}</Description>
                 <p>
                     <TagIcon />
-                    {categories.map((category, i) => <Category key={i}>{category}</Category>)}
+                    {/* {categories.map((category, i) => <Category key={i}>{category}</Category>)} */}
                 </p>
                 <CardFooter>
-                    <div>{languages.map((language, i) => <LanguageIcon language={language} key={i} />)}</div>
+                    <div>{this.languages.map((language, i) => <LanguageIcon language={language.name} key={i} />)}</div>
                     <div>
-                        <LinkToWebsite href={website}>
-                            <GlobeIcon />&nbsp;Website
-                        </LinkToWebsite>
-                        <LinkToSource href={source}>
+                        {homepageUrl && (
+                            <LinkToWebsite href={homepageUrl}>
+                                <GlobeIcon />&nbsp;Website
+                            </LinkToWebsite>
+                        )}
+                        <LinkToSource href={websiteUrl}>
                             <GithubIcon />&nbsp;Source Code
                         </LinkToSource>
                     </div>
                 </CardFooter>
             </Card>
         );
+    }
+
+    private get languages() {
+        return this.props.languages.edges.map(lang => lang.node);
     }
 }

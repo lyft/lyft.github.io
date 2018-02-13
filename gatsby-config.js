@@ -1,3 +1,4 @@
+const fs = require('fs');
 const { projects } = require('./projects.json');
 
 module.exports = {
@@ -32,6 +33,15 @@ module.exports = {
                     yandex: false,
                     windows: false,
                 },
+            },
+        },
+
+        {
+            resolve: `gatsby-source-github-api`,
+            options: {
+                token: process.env.GITHUB_TOKEN,
+                varuables: {},
+                graphQLQuery: fs.readFileSync('./github.graphql').toString(),
             },
         },
     ],
