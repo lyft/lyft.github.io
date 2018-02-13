@@ -1,6 +1,9 @@
 language: node_js
 node_js: stable
 cache: yarn
+script:
+  - yarn test
+  - yarn build
 deploy:
   provider: pages
   target-branch: master
