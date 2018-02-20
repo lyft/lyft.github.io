@@ -1,0 +1,2 @@
+webpackJsonp([0x865add853bf1],{249:function(e,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.default=function(){return"undefined"!=typeof window&&(window.location.href="https://www.envoyproxy.io"),null}}});
+//# sourceMappingURL=component---src-pages-envoy-tsx-7f13eeebcbb3b58b18ed.js.map
