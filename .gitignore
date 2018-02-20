@@ -1,16 +1,15 @@
-.bundle
-.DS_Store
-public
-.cache
-node_modules
-dist
-.divshot-cache
 # Project dependencies
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 .cache/
 dist/
+
 # Build directory
 public/
 .DS_Store
 yarn-error.log
+.bundle
+public
+.cache
+dist
+.divshot-cache
