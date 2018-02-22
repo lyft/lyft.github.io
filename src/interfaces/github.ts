@@ -1,6 +1,6 @@
 export interface GithubData {
     data: {
-        organization: Organization;
+        nodes: Organization[];
     };
 }
 
@@ -61,5 +61,7 @@ export interface Repositories {
 }
 
 export interface Organization {
+    id: string;
+    name: string;
     repositories: Repositories;
 }
