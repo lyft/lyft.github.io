@@ -85,7 +85,7 @@
             "website": "https://github.com/lyft/ratelimit"
         },
         {
-            "name": "MetaProxy",
+            "name": "MetaDataProxy",
             "description": "A proxy for AWS's metadata service that gives out scoped IAM credentials from STS",
             "categories": ["Infrastructure"],
             "languages": ["Python"],

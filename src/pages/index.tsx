@@ -30,19 +30,27 @@ export default class extends React.Component<IndexPageProps, IndexPageState> {
                 <Banner />
                 <Navigation categories={this.categories} onCategoryChanged={this.onCategoryChanged} />
                 <div>
-                    {this.props.data.site.siteMetadata.projects.map(
-                        (project, i) =>
-                            this.shouldRenderProject(project) && (
-                                <ProjectTile
-                                    project={project}
-                                    key={i}
-                                    repositoryNode={this.getProjectRepositoryNode(project)}
-                                />
-                            ),
-                    )}
+                    {this.projects.map((project, i) => (
+                        <ProjectTile
+                            project={project}
+                            key={i}
+                            repositoryNode={this.getProjectRepositoryNode(project)}
+                        />
+                    ))}
                 </div>
             </div>
         );
+    }
+
+    /**
+     * Get project that should be rendered sorted by stars
+     */
+    private get projects() {
+        return this.props.data.site.siteMetadata.projects
+            .filter(project => this.shouldRenderProject(project))
+            .sort((pr1, pr2) => {
+                return this.getProjectStarCount(pr2) - this.getProjectStarCount(pr1);
+            });
     }
 
     private shouldRenderProject(project: Project) {
@@ -78,9 +86,24 @@ export default class extends React.Component<IndexPageProps, IndexPageState> {
     }
 
     private getProjectRepositoryNode(project: Project) {
+        const chars = /[A-z]+/;
         return this.repositoriesNodes.find(
-            repositoriesNode => repositoriesNode.name.toLocaleLowerCase() === project.name.toLowerCase(),
+            repositoriesNode =>
+                chars.exec(repositoriesNode.name)![0].toLowerCase() === chars.exec(project.name)![0].toLowerCase(),
         );
+    }
+
+    /**
+     * Get a project's star count
+     * @param project Project objet
+     */
+    private getProjectStarCount(project: Project) {
+        const repositoryNode = this.getProjectRepositoryNode(project);
+        if (repositoryNode) {
+            return repositoryNode.stargazers.totalCount;
+        }
+
+        return 0;
     }
 }
 
@@ -96,6 +119,43 @@ export const pageQuery = graphql`
                     categories
                     website
                     source
+                }
+            }
+        }
+        githubData {
+            data {
+                organization {
+                    repositories {
+                        edges {
+                            node {
+                                name
+                                url
+                                languages {
+                                    edges {
+                                        node {
+                                            name
+                                        }
+                                    }
+                                }
+                                description
+                                repositoryTopics {
+                                    edges {
+                                        node {
+                                            topic {
+                                                name
+                                            }
+                                        }
+                                    }
+                                }
+                                stargazers {
+                                    totalCount
+                                }
+                                forks {
+                                    totalCount
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

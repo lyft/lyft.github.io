@@ -32,8 +32,16 @@ const Card = styled.div`
   }
 `;
 
+const TitleWrapper = styled.header`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+`;
+
 const Title = styled.h3`
     color: ${colors.mulberry};
+    margin: 0;
 `;
 
 const Description = styled.p`
@@ -101,10 +109,12 @@ const CardFooter = styled.div`
 export class ProjectTile extends React.Component<{ project: Project; repositoryNode?: RepositoryNode }> {
     public render() {
         const { languages, name, description, categories, website, source } = this.props.project;
-        const { url: websiteUrl, stargazers, homepageUrl } = this.props.repositoryNode;
         return (
             <Card>
-                <Title>{name}</Title>
+                <TitleWrapper>
+                    <Title>{name}</Title>
+                    <div>{this.props.repositoryNode && '★' + this.props.repositoryNode.stargazers.totalCount}</div>
+                </TitleWrapper>
                 <Description>{description}</Description>
                 <p>
                     <TagIcon />
