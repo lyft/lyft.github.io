@@ -1,0 +1,37 @@
+{
+    organization(login: "lyft") {
+        repositories(first: 100, isFork: false, privacy: PUBLIC, orderBy: { field: STARGAZERS, direction: DESC }) {
+            edges {
+                node {
+                    name
+                    url
+                    homepageUrl
+                    description
+                    descriptionHTML
+                    languages(first: 1, orderBy: { field: SIZE, direction: DESC }) {
+                        edges {
+                            node {
+                                name
+                            }
+                        }
+                    }
+                    repositoryTopics(first: 100) {
+                        edges {
+                            node {
+                                topic {
+                                    name
+                                }
+                            }
+                        }
+                    }
+                    stargazers {
+                        totalCount
+                    }
+                    forks {
+                        totalCount
+                    }
+                }
+            }
+        }
+    }
+}

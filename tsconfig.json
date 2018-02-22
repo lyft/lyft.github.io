@@ -9,7 +9,5 @@
         "jsx": "react",
         "lib": ["dom", "es2017"]
     },
-    "include": [
-        "./src/**/*"
-    ]
+    "include": ["./src/**/*"]
 }

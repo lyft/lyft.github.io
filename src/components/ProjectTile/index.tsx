@@ -1,6 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
+
 import * as colors from '../../common/colors';
+
+import { RepositoryNode } from '../../interfaces/github';
 
 import * as tagIcon from './tag.png';
 import * as globeIcon from './globe.png';
@@ -29,8 +32,16 @@ const Card = styled.div`
   }
 `;
 
+const TitleWrapper = styled.header`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+`;
+
 const Title = styled.h3`
     color: ${colors.mulberry};
+    margin: 0;
 `;
 
 const Description = styled.p`
@@ -95,12 +106,15 @@ const CardFooter = styled.div`
 `;
 
 /** A tile for a open source project */
-export class ProjectTile extends React.Component<Project> {
+export class ProjectTile extends React.Component<{ project: Project; repositoryNode?: RepositoryNode }> {
     public render() {
-        const { languages, name, description, categories, website, source } = this.props;
+        const { languages, name, description, categories, website, source } = this.props.project;
         return (
             <Card>
-                <Title>{name}</Title>
+                <TitleWrapper>
+                    <Title>{name}</Title>
+                    <div>{this.props.repositoryNode && '★' + this.props.repositoryNode.stargazers.totalCount}</div>
+                </TitleWrapper>
                 <Description>{description}</Description>
                 <p>
                     <TagIcon />

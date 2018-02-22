@@ -33,6 +33,7 @@
         "gatsby-plugin-styled-components": "^2.0.5",
         "gatsby-plugin-typescript": "^1.4.10",
         "gatsby-plugin-typography": "^1.7.13",
+        "gatsby-source-github-api": "^0.0.3",
         "gh-pages": "^1.1.0",
         "github-language-colors": "https://github.com/doda/github-language-colors",
         "husky": "^0.14.3",
