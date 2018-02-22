@@ -44,5 +44,16 @@ module.exports = {
                 graphQLQuery: fs.readFileSync('./github.graphql').toString(),
             },
         },
+        {
+            resolve: `gatsby-source-github-api`,
+            options: {
+                token: process.env.GITHUB_TOKEN,
+                varuables: {},
+                graphQLQuery: fs
+                    .readFileSync('./github.graphql')
+                    .toString()
+                    .replace('"lyft"', '"envoyproxy"'),
+            },
+        },
     ],
 };
