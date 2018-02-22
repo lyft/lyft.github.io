@@ -82,7 +82,12 @@ export default class extends React.Component<IndexPageProps, IndexPageState> {
     }
 
     private get repositoriesNodes() {
-        return this.props.data.githubData.data.organization.repositories.edges.map(edge => edge.node);
+        let result: RepositoryNode[] = [];
+        for (const organization of this.props.data.githubData.data.nodes) {
+            result = [...result, ...organization.repositories.edges.map(edge => edge.node)];
+        }
+
+        return result;
     }
 
     private getProjectRepositoryNode(project: Project) {
@@ -124,7 +129,7 @@ export const pageQuery = graphql`
         }
         githubData {
             data {
-                organization {
+                nodes {
                     repositories {
                         edges {
                             node {

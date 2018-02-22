@@ -1,6 +1,15 @@
+
 {
-    organization(login: "lyft") {
-        repositories(first: 100, isFork: false, privacy: PUBLIC, orderBy: { field: STARGAZERS, direction: DESC }) {
+  
+  # organization IDs.
+  # lyft "MDEyOk9yZ2FuaXphdGlvbjQyNjkzNDA="
+  # envoyproxy "MDEyOk9yZ2FuaXphdGlvbjMwMTI1NjQ5"
+  nodes(ids: ["MDEyOk9yZ2FuaXphdGlvbjQyNjkzNDA=", "MDEyOk9yZ2FuaXphdGlvbjMwMTI1NjQ5"]) {
+    id
+    ... on Organization {
+      name
+
+      repositories(first: 100, isFork: false, privacy: PUBLIC, orderBy: { field: STARGAZERS, direction: DESC }) {
             edges {
                 node {
                     name
@@ -34,4 +43,5 @@
             }
         }
     }
+  }
 }
