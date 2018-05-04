@@ -40,7 +40,6 @@ module.exports = {
             resolve: `gatsby-source-github-api`,
             options: {
                 token: process.env.GITHUB_TOKEN,
-                varuables: {},
                 graphQLQuery: fs.readFileSync('./github.graphql').toString(),
             },
         },

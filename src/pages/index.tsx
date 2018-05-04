@@ -23,12 +23,16 @@ interface IndexPageState {
 }
 
 export default class extends React.Component<IndexPageProps, IndexPageState> {
-    public state = { selectedCategory: undefined };
+    public state = { selectedCategory: (typeof window !== 'undefined' && window.location.hash.substr(1)) || undefined };
     public render() {
         return (
             <div>
                 <Banner />
-                <Navigation categories={this.categories} onCategoryChanged={this.onCategoryChanged} />
+                <Navigation
+                    selectedCategory={this.state.selectedCategory}
+                    categories={this.categories}
+                    onCategoryChanged={this.onCategoryChanged}
+                />
                 <div>
                     {this.projects.map((project, i) => (
                         <ProjectTile
