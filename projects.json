@@ -101,6 +101,14 @@
             "website": "https://github.com/lyft/set-simulator-location"
         },
         {
+            "name": "xiblint",
+            "description": "A tool for linting storyboard and xib files",
+            "categories": ["iOS"],
+            "languages": ["Python"],
+            "source": "https://github.com/lyft/xiblint",
+            "website": "https://github.com/lyft/xiblint"
+        },
+        {
             "name": "Toasted Marshmallow",
             "description": "S'More speed for Marshmallow",
             "categories": ["Web"],
