@@ -59,7 +59,7 @@ export const Header = () => (
         </LogoLink>
         <RightNav>
             <RightNavLink target="_blank" href="https://github.com/lyft/">
-                Github
+                GitHub
             </RightNavLink>
             <RightNavLink target="_blank" href="https://eng.lyft.com/">
                 Blog

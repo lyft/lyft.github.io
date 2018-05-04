@@ -24,7 +24,7 @@ const FooterWrapper = styled.footer`
 export const Footer = () => (
     <FooterWrapper>
         <a target="_blank" href="https://github.com/lyft/">
-            Lyft Github Organization
+            Lyft on GitHub
         </a>
         <a target="_blank" href="https://eng.lyft.com/">
             Lyft Engineering Blog
