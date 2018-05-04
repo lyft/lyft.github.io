@@ -14,11 +14,13 @@ This is code for oss.lyft.com website.
 
 You need to have `node` and `yarn` installed.
 
-Clone the repo and run following command to start the development server.
+Clone the repo and run following command to start the development server:
 
 ```sh
-yarn start
+GITHUB_TOKEN=<github-token> yarn start
 ```
+
+:bulb: Get a new GitHub access token [here](https://github.com/settings/tokens)!
 
 ## Deploy
 
