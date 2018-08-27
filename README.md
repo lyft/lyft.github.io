@@ -1,4 +1,4 @@
-# Lyft Open Source Webstie
+# Lyft Open Source Website
 
 [![Build Status](https://travis-ci.org/lyft/lyft.github.io.svg?branch=develop)](https://travis-ci.org/lyft/lyft.github.io)
 
