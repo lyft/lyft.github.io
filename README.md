@@ -25,4 +25,3 @@ GITHUB_TOKEN=<github-token> yarn start
 ## Deploy
 
 Everything merged to the `develop` branch is automatically deployed via TravisCI.
-
