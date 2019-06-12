@@ -9,7 +9,7 @@
     ... on Organization {
       name
 
-      repositories(first: 10, isFork: false, privacy: PUBLIC, orderBy: { field: STARGAZERS, direction: DESC }) {
+      repositories(first: 100, isFork: false, privacy: PUBLIC, orderBy: { field: STARGAZERS, direction: DESC }) {
             edges {
                 node {
                     name
