@@ -24,7 +24,7 @@
                             }
                         }
                     }
-                    repositoryTopics(first: 10) {
+                    repositoryTopics(first: 100) {
                         edges {
                             node {
                                 topic {
