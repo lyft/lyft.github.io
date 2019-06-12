@@ -16,6 +16,22 @@ export interface Languages {
     edges: LangugeEdge[];
 }
 
+export interface Topic {
+    name: string;
+}
+
+export interface RepositoryTopicNode {
+    topic: Topic;
+}
+
+export interface RepositoryTopicEdge {
+    node: RepositoryTopicNode;
+}
+
+export interface RepositoryTopics {
+    edges: RepositoryTopicEdge[];
+}
+
 export interface Stargazers {
     totalCount: number;
 }
@@ -31,6 +47,7 @@ export interface RepositoryNode {
     languages: Languages;
     description: string;
     descriptionHTML: string;
+    repositoryTopics: RepositoryTopics;
     stargazers: Stargazers;
     forks: Forks;
 }

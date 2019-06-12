@@ -24,6 +24,15 @@
                             }
                         }
                     }
+                    repositoryTopics(first: 10) {
+                        edges {
+                            node {
+                                topic {
+                                    name
+                                }
+                            }
+                        }
+                    }
                     stargazers {
                         totalCount
                     }

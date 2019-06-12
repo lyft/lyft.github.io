@@ -147,6 +147,15 @@ export const pageQuery = graphql`
                                     }
                                 }
                                 description
+                                repositoryTopics {
+                                    edges {
+                                        node {
+                                            topic {
+                                                name
+                                            }
+                                        }
+                                    }
+                                }
                                 stargazers {
                                     totalCount
                                 }
