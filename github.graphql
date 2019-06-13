@@ -4,7 +4,7 @@
   # organization IDs.
   # lyft "MDEyOk9yZ2FuaXphdGlvbjQyNjkzNDA="
   # envoyproxy "MDEyOk9yZ2FuaXphdGlvbjMwMTI1NjQ5"
-  nodes(ids: ["MDEyOk9yZ2FuaXphdGlvbjQyNjkzNDA="]) {
+  nodes(ids: ["MDEyOk9yZ2FuaXphdGlvbjQyNjkzNDA=", "MDEyOk9yZ2FuaXphdGlvbjMwMTI1NjQ5"]) {
     id
     ... on Organization {
       name
