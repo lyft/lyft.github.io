@@ -95,10 +95,8 @@ export default class extends React.Component<IndexPageProps, IndexPageState> {
     }
 
     private getProjectRepositoryNode(project: Project) {
-        const chars = /[A-z]+/;
         return this.repositoriesNodes.find(
-            repositoriesNode =>
-                chars.exec(repositoriesNode.name)![0].toLowerCase() === chars.exec(project.name)![0].toLowerCase(),
+            repositoriesNode => repositoriesNode.url.toLowerCase() === project.source.toLowerCase(),
         );
     }
 

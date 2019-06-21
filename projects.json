@@ -31,7 +31,7 @@
                 "Confidant is a open source secret management service that provides user-friendly storage and access to secrets in a secure way, from the developers at Lyft",
             "languages": ["Python", "JavaScript"],
             "website": "https://lyft.github.io/confidant/",
-            "source": "https://lyft.github.io/confidant/",
+            "source": "https://github.com/lyft/confidant",
             "categories": ["Security"]
         },
         {
