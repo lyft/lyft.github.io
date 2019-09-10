@@ -123,6 +123,14 @@
             "languages": ["Python"],
             "source": "https://github.com/lyft/cartography",
             "website": "https://github.com/lyft/cartography"
+        },
+        {
+            "name": "Amundsen",
+            "description": "Amundsen is a data discovery and metadata driven application.",
+            "categories": ["Data"],
+            "languages": ["Python"],
+            "source": "https://github.com/lyft/amundsen",
+            "website": "https://github.com/lyft/amundsen"
         }
     ]
 }
