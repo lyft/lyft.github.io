@@ -18,14 +18,6 @@
             "categories": ["Infrastructure"]
         },
         {
-            "name": "React to TypeScript Transform",
-            "description": "Convert React JavaScript code to TypeScript with proper typing",
-            "languages": ["TypeScript"],
-            "categories": ["Web"],
-            "website": "https://github.com/lyft/react-javascript-to-typescript-transform",
-            "source": "https://github.com/lyft/react-javascript-to-typescript-transform"
-        },
-        {
             "name": "Universal Async Component",
             "description": "React Universal Async Component that works with server side rendering",
             "languages": ["TypeScript"],
