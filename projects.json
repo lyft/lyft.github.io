@@ -12,7 +12,7 @@
         {
             "name": "Clutch",
             "description": "An extensible platform for infrastructure management",
-            "languages": ["Go"],
+            "languages": ["Go", "Typescript"],
             "website": "https://clutch.sh",
             "source": "https://github.com/lyft/clutch",
             "categories": ["Infrastructure"]
