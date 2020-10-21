@@ -129,8 +129,8 @@
             "description": "Amundsen is a data discovery and metadata driven application.",
             "categories": ["Data"],
             "languages": ["Python"],
-            "source": "https://github.com/lyft/amundsen",
-            "website": "https://github.com/lyft/amundsen"
+            "source": "https://github.com/amundsen-io/amundsen",
+            "website": "https://github.com/amundsen-io/amundsen"
         }
     ]
 }
