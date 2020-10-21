@@ -10,6 +10,14 @@
             "categories": ["Infrastructure"]
         },
         {
+            "name": "Clutch",
+            "description": "An extensible platform for infrastructure management",
+            "languages": ["Go"],
+            "website": "https://clutch.sh",
+            "source": "https://github.com/lyft/clutch",
+            "categories": ["Infrastructure"]
+        },
+        {
             "name": "React to TypeScript Transform",
             "description": "Convert React JavaScript code to TypeScript with proper typing",
             "languages": ["TypeScript"],
