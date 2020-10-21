@@ -81,8 +81,8 @@
                 "Go/gRPC service designed to enable generic rate limit scenarios from different types of applications.",
             "categories": ["Infrastructure"],
             "languages": ["Go"],
-            "source": "https://github.com/lyft/ratelimit",
-            "website": "https://github.com/lyft/ratelimit"
+            "source": "https://github.com/envoyproxy/ratelimit",
+            "website": "https://github.com/envoyproxy/ratelimit"
         },
         {
             "name": "MetaDataProxy",
