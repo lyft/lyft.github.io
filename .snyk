@@ -1,0 +1,163 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > node-rest-client > debug:
+        patched: '2019-11-08T03:59:17.549Z'
+  'npm:extend:20180424':
+    - gatsby > chokidar > fsevents > node-pre-gyp > request > extend:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > request > extend:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > proper-lockfile > extend:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > extend:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > liftoff > extend:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > jimp > request > extend:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > jspm-npm > request > extend:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > svg2png > phantomjs-prebuilt > request > extend:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > jspm-github > request > extend:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > to-ico > resize-img > jimp > request > extend:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > extend:
+        patched: '2019-11-08T03:59:17.549Z'
+  'npm:hoek:20180212':
+    - gatsby-plugin-favicon > favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > svg2png > phantomjs-prebuilt > request > hawk > cryptiles > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > to-ico > resize-img > jimp > request > hawk > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > jspm-github > request > hawk > cryptiles > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > to-ico > resize-img > jimp > request > hawk > cryptiles > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > chokidar > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > chokidar > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > chokidar > fsevents > node-pre-gyp > request > hawk > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > chokidar > fsevents > node-pre-gyp > request > hawk > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > chokidar > fsevents > node-pre-gyp > request > hawk > sntp > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > hawk > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > chokidar > fsevents > node-pre-gyp > request > hawk > cryptiles > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > hawk > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > hawk > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > jspm-npm > request > hawk > cryptiles > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > hawk > sntp > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > hawk > sntp > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > hawk > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > hawk > cryptiles > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > hawk > cryptiles > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > joi > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > joi > topo > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > webpack-validator > joi > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > webpack-validator > joi > topo > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > request > hawk > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > jimp > request > hawk > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > jimp > request > hawk > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > jspm-github > request > hawk > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > request > hawk > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > svg2png > phantomjs-prebuilt > request > hawk > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > request > hawk > sntp > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > jspm-npm > request > hawk > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > jimp > request > hawk > sntp > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > jspm-github > request > hawk > sntp > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > jspm-github > request > hawk > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > jspm-npm > request > hawk > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > jspm-npm > request > hawk > sntp > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > to-ico > resize-img > jimp > request > hawk > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > request > hawk > cryptiles > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > svg2png > phantomjs-prebuilt > request > hawk > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > svg2png > phantomjs-prebuilt > request > hawk > sntp > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > jimp > request > hawk > cryptiles > boom > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > to-ico > resize-img > jimp > request > hawk > sntp > hoek:
+        patched: '2019-11-08T03:59:17.549Z'
+  'npm:lodash:20180130':
+    - gatsby > webpack-configurator > lodash:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > cheerio > lodash:
+        patched: '2019-11-08T03:59:17.549Z'
+  'npm:ms:20170412':
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > node-rest-client > debug > ms:
+        patched: '2019-11-08T03:59:17.549Z'
+  'npm:stringstream:20180511':
+    - gatsby > chokidar > fsevents > node-pre-gyp > request > stringstream:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > request > stringstream:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > stringstream:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > jspm-github > request > stringstream:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > postcss-import > pkg-resolve > jspm > jspm-npm > request > stringstream:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > svg2png > phantomjs-prebuilt > request > stringstream:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > stringstream:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > to-ico > resize-img > jimp > request > stringstream:
+        patched: '2019-11-08T03:59:17.549Z'
+    - gatsby-plugin-favicon > favicons-webpack-plugin > favicons > jimp > request > stringstream:
+        patched: '2019-11-08T03:59:17.549Z'
